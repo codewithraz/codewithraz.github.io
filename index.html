@@ -4,30 +4,33 @@
 body, html {
   height: 100%;
   margin: 0;
+  overflow: hidden; /* Prevent scrollbars */
 }
 
 .bgimg {
-  background-image: url('/images
-/concrete-bricks-wall.jpg');
+  background-image: url('https://codewithraz.github.io/images/concrete-bricks-wall.jpg');
   height: 100%;
   background-position: center;
   background-size: cover;
   position: relative;
-  color: white;
-  font-family: "Courier New", Courier, monospace;
+  color: black; /* Changed to black text */
+  font-family: "Arial", sans-serif; /* Updated to a cleaner, modern font */
   font-size: 25px;
+  animation: fadeInBackground 2s ease-in-out;
 }
 
 .topleft {
   position: absolute;
   top: 0;
   left: 16px;
+  animation: slideInLeft 1s ease-in-out;
 }
 
 .bottomleft {
   position: absolute;
   bottom: 0;
   left: 16px;
+  animation: slideInLeft 1s ease-in-out 1.5s; /* Delay to start after topleft */
 }
 
 .middle {
@@ -36,26 +39,49 @@ body, html {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  animation: zoomIn 2s ease-in-out;
 }
 
 hr {
   margin: auto;
   width: 40%;
+  animation: growWidth 2s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeInBackground {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+  to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+@keyframes growWidth {
+  from { width: 0; }
+  to { width: 40%; }
 }
 </style>
 <body>
 
 <div class="bgimg">
   <div class="topleft">
-    <p>Logo</p>
+    <p>GreenFort</p>
   </div>
   <div class="middle">
-    <h1>COMING SOON</h1>
+    <h1>Under Construction</h1>
     <hr>
-    <p>35 days left</p>
+    <p>Stay Tuned</p>
   </div>
   <div class="bottomleft">
-    <p>Some text</p>
+    <p></p>
   </div>
 </div>
 
