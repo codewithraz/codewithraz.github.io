@@ -405,9 +405,9 @@ html {
 }
 
 /* Contact Us Section */
-/* Contact Us Section */
 .contact-us {
     padding: 5rem 7%; /* Increased padding to match other sections */
+    text-align: center;
     background-color: var(--headerclr); /* Optional: matching background color */
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; /* Optional: add shadow for consistency */
 }
