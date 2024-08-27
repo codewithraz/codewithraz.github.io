@@ -8,7 +8,7 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
-    text-transform: capitalize;
+    text-transform: none;
     box-sizing: border-box;
     transition: .2s;
     font-family: 'Roboto', sans-serif;
