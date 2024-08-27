@@ -99,13 +99,13 @@ html {
 /* Hide images by default */
 .mySlides {
     display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-size: cover; /* Ensure images cover the slide */
     background-position: center; /* Center images */
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 
 /* Fade effect */
