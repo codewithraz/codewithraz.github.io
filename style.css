@@ -419,17 +419,77 @@ html {
 .contact-us p {
     color: var(--textclr);
     font-size: 1.5rem;
+    margin-bottom: 2rem;
 }
 
-.contact-us a {
-    color: var(--mainclr);
-    text-decoration: underline;
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--headerclr);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.contact-us a:hover {
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
     color: var(--textclr);
-    text-decoration: none;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
 }
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--headerclr);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    padding: 1rem 2rem;
+    background: var(--mainclr);
+    color: var(--headerclr);
+    border: none;
+    border-radius: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: var(--textclr);
+    color: white;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 767px) {
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .form-group label {
+        font-size: 1rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.9rem;
+    }
+
+    .submit-btn {
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
 
 @media (max-width: 767px) {
     html {
