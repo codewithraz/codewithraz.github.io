@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,600;0,700;1,100&family=Roboto:wght@100;300;400;500;700&display=swap');
 :root{
-    --headerclr:#222533;
-    --mainclr:#ffcb0f;
+    --headerclr:#e0f7e4; /* Light green for the header background */
+    --mainclr:#4caf50;   /* A vibrant green for accents */
+    --textclr:#2d2d2d;   /* Darker color for text to ensure readability */
 }
 *{
     margin: 0;
@@ -33,7 +34,7 @@ html{
     font-size: 30px;
 }
 .nav a{
-    color: white;
+    color: var(--textclr);
     font-size: 1.5rem;
     margin-left: 1rem;
 }
@@ -41,7 +42,7 @@ html{
     color: var(--mainclr);
 }
 .icon-header div{
-    color: white;
+    color: var(--textclr);
     margin-left: 1.5rem;
     font-size: 2rem;
     cursor: pointer;
@@ -66,7 +67,7 @@ html{
     width: 100%;
     padding: 1rem;
     border-radius: 10px;
-    border: 1px solid var(--headerclr);
+    border: 1px solid var(--mainclr);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .search-form.active{
@@ -90,7 +91,7 @@ html{
 }
 .inner-back-text h1{
     font-size: 50px;
-    color: white;
+    color: var(--textclr);
     text-align: center;
     line-height: 5rem;
     text-transform: uppercase;
@@ -100,7 +101,7 @@ html{
     text-transform: uppercase;
 }
 .inner-back-text p{
-    color: white;
+    color: var(--textclr);
     font-size: 1.5rem;
     margin-bottom: 15px;
     padding: 1rem;
@@ -116,12 +117,12 @@ html{
     padding: 1.5rem 4rem;
     background: var(--mainclr);
     border-radius: 15px;
-    color: var(--headerclr);
+    color: white;
     font-size: 1.5rem;
 }
 .first-btn:hover, .second-btn:hover{
     background: var(--headerclr);
-    color: white;
+    color: var(--textclr);
     letter-spacing: 3px;
 }
 .welcome{
@@ -146,27 +147,28 @@ html{
     font-size: 1.5rem;
     padding: 1rem 0;
     margin-bottom: 25px;
+    color: var(--textclr);
 }
 .welcome-text a{
     padding: 1.5rem 4rem;
     background: var(--mainclr);
-    color: var(--headerclr);
+    color: white;
     font-size: 1.5rem;
     border-radius: 15px;
 }
 .welcome-text a:hover{
     background: var(--headerclr);
-    color: white;
+    color: var(--textclr);
 }
 .inner-welcome img{
 width: 80%;
 }
 .chose-us{
     padding: 5rem 7%;
-    background-color: turquoise;
+    background-color: #f0fff4; /* Very light green background */
 }
 .chose-us h1{
-    color: var(--headerclr);
+    color: var(--textclr);
     font-size: 40px;
     text-align: center;
     padding: 2rem 1rem;
@@ -175,7 +177,7 @@ width: 80%;
     color: var(--mainclr);
 }
 .chose-text{
-    color: var(--headerclr);
+    color: var(--textclr);
     font-size: 1.5rem;
     padding: 1rem 10rem;
     text-align: center;
@@ -203,26 +205,28 @@ width: 80%;
 }
 .chose-icon i{
     font-size: 40px;
-    color: white;
+    color: var(--mainclr);
     transition: .5s;
 }
 .chose-icon i:hover{
-color: var(--headerclr);
+color: white;
 transform: translateY(-25px);
 }
 .inner-chose h2{
     font-size: 2rem;
     padding: 1rem 0;
+    color: var(--textclr);
 }
 .inner-chose p{
     font-size: 1.5rem;
     padding: 0 1rem;
+    color: var(--textclr);
 }
 .our-services{
     padding: 5rem 7%;
 }
 .our-services h1{
-    color: var(--headerclr);
+    color: var(--textclr);
     font-size: 40px;
     text-align: center;
     padding: 1rem 0;
@@ -244,27 +248,29 @@ transform: translateY(-25px);
 .inner-service h2{
     padding: 1rem 0;
     font-size: 2rem;
+    color: var(--textclr);
 }
 .inner-service p{
     font-size: 1.5rem;
     margin-bottom: 25px;
+    color: var(--textclr);
 }
 .inner-service a{
     padding: 1.5rem 3rem;
     background: var(--mainclr);
-    color: var(--headerclr);
+    color: white;
     border-radius: 15px;
 
 }
 .inner-service a:hover{
     background: var(--headerclr);
-    color: white;
+    color: var(--textclr);
 }
 .our-gallery{
     padding: 4rem 7%;
 }
 .our-gallery h1{
-    color: var(--headerclr);
+    color: var(--textclr);
     font-size: 40px;
     text-align: center;
     margin-bottom: 20px;
@@ -294,7 +300,7 @@ transform: translateY(-25px);
     padding: 4rem 7%;
 }
 .customer-review h1{
-    color: var(--headerclr);
+    color: var(--textclr);
     font-size: 40px;
     text-align: center;
     margin-bottom: 20px;
@@ -325,6 +331,7 @@ transform: translateY(-25px);
 .inner-review p{
     font-size: 1.5rem;
     padding: 1rem 2rem;
+    color: var(--textclr);
 }
 .inner-review img{
     width: 50px;
@@ -336,16 +343,6 @@ transform: translateY(-25px);
     top: 1rem;
     color: var(--mainclr);
 }
-
-
-
-
-
-
-
-
-
-
 
 @media (max-width:767px) {
     html{
@@ -368,7 +365,7 @@ transform: translateY(-25px);
         transition: .5s;
     }
     .nav a{
-        color: black;
+        color: var(--textclr);
         display: block;
         margin: 1rem;
         font-size: 14px;
