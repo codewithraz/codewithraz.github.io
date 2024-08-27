@@ -405,30 +405,73 @@ html {
 }
 
 /* Contact Us Section */
+/* Contact Us Section */
 .contact-us {
-    padding: 3rem 7%;
-    text-align: center;
+    padding: 5rem 7%; /* Increased padding to match other sections */
+    background-color: var(--headerclr); /* Optional: matching background color */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; /* Optional: add shadow for consistency */
 }
 
 .contact-us h1 {
     color: var(--textclr);
-    font-size: 2.5rem;
+    font-size: 2.5rem; /* Matching font size */
     margin-bottom: 1rem;
 }
 
 .contact-us p {
     color: var(--textclr);
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Consistent font size for paragraph */
+    margin-bottom: 2rem; /* Adjust spacing as needed */
 }
 
-.contact-us a {
-    color: var(--mainclr);
-    text-decoration: underline;
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--headerclr);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.contact-us a:hover {
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
     color: var(--textclr);
-    text-decoration: none;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--headerclr);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    padding: 1rem 2rem;
+    background: var(--mainclr);
+    color: var(--headerclr);
+    border: none;
+    border-radius: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: var(--textclr);
+    color: white;
+    letter-spacing: 2px;
 }
 
 @media (max-width: 767px) {
