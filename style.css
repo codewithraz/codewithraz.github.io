@@ -46,7 +46,7 @@ html {
 }
 
 .nav a {
-    color: var(--textclr);
+    color: var(--mainclr); /* Default color is green */
     font-size: 1.8rem; /* Increase font size */
     margin-left: 2rem; /* Increase space between links */
     text-decoration: none; /* Ensure links have no underline */
@@ -54,7 +54,7 @@ html {
 }
 
 .nav a:hover {
-    color: var(--mainclr);
+    color: var(--textclr); /* Change color to black on hover */
 }
 
 .icon-header div {
