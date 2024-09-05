@@ -25,7 +25,7 @@ html {
 .header {
     max-width: 1200px; /* Adjusted width */
     margin: 0 auto; /* Center align the header */
-    padding: 1rem 5%; /* Adjusted padding to make the header background narrower */
+    padding: 1rem 5%; /* Adjusted padding */
     position: fixed;
     left: 0;
     right: 0;
@@ -34,6 +34,7 @@ html {
     align-items: center;
     background: var(--headerclr);
     z-index: 10000;
+    top: 0; /* Ensure header is always at the top */
 }
 
 #logo img {
@@ -105,6 +106,7 @@ html {
     width: 100%;
     height: 100vh;
     position: relative;
+    padding-top: 80px; /* Added padding-top to avoid overlap with header */
 }
 
 .inner-back-text {
@@ -280,110 +282,94 @@ html {
 }
 
 .contact-us h1 {
+    font-size: 3rem; /* Adjusted font size */
     color: var(--textclr);
-    font-size: 3rem; /* Adjusted size */
+    padding-bottom: 2rem;
+}
+
+.contact-us .inner-contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.contact-us .inner-contact div {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+}
+
+.contact-us .inner-contact div img {
+    width: 60%; /* Adjusted size */
     margin-bottom: 1rem;
 }
 
-.contact-us p {
-    color: var(--textclr);
-    font-size: 1.2rem; /* Adjusted size */
-    margin-bottom: 2rem;
+.contact-us .inner-contact div h2 {
+    font-size: 2rem; /* Adjusted size */
+    margin-bottom: 1rem;
 }
 
-@media (max-width: 767px) {
-    html {
-        font-size: 55%;
-    }
+.contact-us .inner-contact div p {
+    font-size: 1.2rem; /* Adjusted size */
+}
 
-    #menu-bar {
-        display: block;
-    }
+.contact-us .inner-contact div a {
+    display: block;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    background: var(--mainclr);
+    color: var(--headerclr);
+    border-radius: 15px;
+    font-size: 1.2rem;
+    transition: background 0.3s, color 0.3s;
+}
 
+.contact-us .inner-contact div a:hover {
+    background: var(--textclr);
+    color: white;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
     .header {
-        max-width: 100%; /* Full width on mobile */
-        margin: 0; /* Remove centering margin */
-        padding: 1.5rem; /* Adjusted padding */
+        padding: 1rem 2%; /* Adjusted padding */
     }
 
     .nav {
-        position: fixed;
-        top: 0;
-        right: 0;
-        background: var(--headerclr);
-        width: 100%;
-        height: 100%;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-    }
-
-    .nav.active {
-        transform: translateX(0);
+        display: block; /* Stack navigation items vertically */
     }
 
     .nav a {
-        margin-left: 0;
-        margin-bottom: 2rem; /* Spacing between items */
+        margin-left: 0; /* Remove margin */
+        display: block;
+        padding: 1rem 0;
     }
 
     .search-form {
-        width: 80%;
-        top: 100%;
-        right: 1rem;
+        width: 90%; /* Adjusted width for mobile */
+        right: 1rem; /* Adjusted position */
+        top: 80px; /* Adjusted top position */
     }
 
-    .search-form.active {
-        top: 0;
+    .background-image {
+        padding-top: 60px; /* Adjusted padding-top for mobile */
     }
 
     .main-chose {
         flex-direction: column; /* Stack items vertically on mobile */
     }
 
-    .inner-chose {
-        flex: 1 1 auto; /* Allow items to grow and fill available space */
-        max-width: 100%; /* Full width on mobile */
-    }
-
-    .contact-us {
-        padding: 3rem 5%;
-    }
-
     .contact-us .inner-contact {
-        flex-direction: column; /* Stack items vertically */
+        flex-direction: column; /* Stack contact items vertically on mobile */
     }
 
     .contact-us .inner-contact div {
-        width: 100%; /* Full width on mobile */
+        width: 100%;
+        max-width: none; /* Remove max-width on mobile */
     }
 
-    .contact-us .inner-contact div img {
-        width: 50%; /* Adjusted size */
-        margin-bottom: 1rem;
-    }
-
-    .contact-us .inner-contact div h2 {
-        font-size: 2rem; /* Adjusted size */
-    }
-}
-
-@media (max-width: 500px) {
-    html {
-        font-size: 50%;
-    }
-
-    .header {
-        padding: 1rem; /* Reduced padding on smaller screens */
-    }
-
-    .search-form {
-        width: 90%; /* Full width on very small screens */
-    }
-
-    .contact-us .inner-contact div img {
-        width: 60%; /* Adjusted size */
+    .nav.active {
+        top: 60px; /* Adjusted top position */
     }
 }
