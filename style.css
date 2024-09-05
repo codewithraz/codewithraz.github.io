@@ -28,7 +28,7 @@ html {
     left: 0;
     right: 0;
     display: flex;
-    justify-content: space-between; /* Space between logo and nav items */
+    justify-content: space-between;
     align-items: center;
     background: var(--headerclr);
     z-index: 10000;
@@ -42,18 +42,19 @@ html {
 .nav {
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* Aligns items to the right */
-    gap: 3rem; /* Increased spacing between items */
+    margin-left: auto; /* Align to the right */
 }
 
 .nav a {
-    color: var(--mainclr); /* Green color by default */
-    font-size: 1.5rem; /* Adjust as needed */
+    color: var(--textclr);
+    font-size: 1.5rem;
+    margin-left: 2rem; /* Increased spacing for clarity */
     transition: color 0.3s ease; /* Smooth color transition */
 }
 
 .nav a:hover {
-    color: var(--textclr); /* Black color on hover */
+    color: var(--textclr);
+    background: var(--mainclr); /* Change background to green */
 }
 
 .icon-header div {
@@ -131,66 +132,82 @@ html {
 }
 
 .inner-back-btn a {
-    color: #fff;
-    background: var(--mainclr);
-    padding: 1rem 2rem;
-    border-radius: 5px;
-    font-size: 1.6rem;
-    margin: 0 0.5rem;
-    transition: background-color 0.3s ease;
+    margin: 0 1rem;
+    padding: 1.5rem 3rem;
+    display: inline-block;
 }
 
-.inner-back-btn a:hover {
-    background: #004d00;
+.first-btn, .second-btn {
+    background: var(--mainclr);
+    border-radius: 15px;
+    color: var(--headerclr);
+    font-size: 1.5rem;
+    transition: background 0.3s, color 0.3s; /* Smooth background and color transition */
+}
+
+.first-btn:hover, .second-btn:hover {
+    background: var(--textclr);
+    color: white;
+    letter-spacing: 1px;
 }
 
 .welcome {
-    padding: 5rem 7%;
+    padding: 3rem 7%;
 }
 
 .main-welcome {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    gap: 2rem; /* Increased gap for better spacing */
 }
 
-.inner-welcome img {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
+.inner-welcome {
+    flex: 1 1 45rem;
+    text-align: center;
 }
 
 .welcome-text h1 {
-    font-size: 3rem;
+    font-size: 3rem; /* Adjusted font size */
+    color: var(--mainclr);
     margin-bottom: 1rem;
 }
 
 .welcome-text p {
-    font-size: 1.6rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.2rem; /* Slightly smaller font size for better readability */
+    padding: 1rem 0;
+    margin-bottom: 2rem;
 }
 
-.wel-btn {
-    color: #fff;
+.welcome-text a {
+    padding: 1.5rem 3rem;
     background: var(--mainclr);
-    padding: 1rem 2rem;
-    border-radius: 5px;
-    font-size: 1.6rem;
-    transition: background-color 0.3s ease;
+    color: var(--headerclr);
+    font-size: 1.2rem;
+    border-radius: 15px;
+    transition: background 0.3s, color 0.3s; /* Smooth transition */
 }
 
-.wel-btn:hover {
-    background: #004d00;
+.welcome-text a:hover {
+    background: var(--textclr);
+    color: white;
+}
+
+.inner-welcome img {
+    width: 100%;
+    max-width: 500px; /* Added max-width for better scaling */
 }
 
 .chose-us {
     padding: 5rem 7%;
-    background: #f9f9f9;
+    background-color: var(--headerclr); /* Changed to variable */
 }
 
 .chose-us h1 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
+    color: var(--textclr);
+    font-size: 3rem; /* Adjusted font size */
+    text-align: center;
+    padding: 2rem 1rem;
 }
 
 .chose-us h1 span {
@@ -199,43 +216,134 @@ html {
 
 .main-chose {
     display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem; /* Increased gap for better spacing */
 }
 
 .inner-chose {
-    flex: 1;
-    min-width: 220px;
-    background: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
+    flex: 1 1 200px;
     text-align: center;
 }
 
 .chose-icon {
-    font-size: 3rem;
+    width: 80px; /* Adjusted size */
+    height: 80px;
+    text-align: center;
+    line-height: 80px;
+    border: 6px solid var(--mainclr); /* Adjusted border size */
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.chose-icon i {
+    font-size: 2rem; /* Adjusted size */
     color: var(--mainclr);
-    margin-bottom: 1rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.chose-icon i:hover {
+    color: var(--textclr);
+    transform: translateY(-10px); /* Reduced translation for smoother effect */
+}
+
+.inner-chose h2 {
+    font-size: 1.8rem; /* Adjusted size */
+    padding: 1rem 0;
+}
+
+.inner-chose p {
+    font-size: 1.2rem; /* Adjusted size */
+    padding: 0 1rem;
 }
 
 .contact-us {
     padding: 5rem 7%;
-    background: var(--headerclr);
     text-align: center;
+    background-color: var(--headerclr); /* Changed to variable */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .contact-us h1 {
-    font-size: 2.5rem;
+    color: var(--textclr);
+    font-size: 3rem; /* Adjusted size */
     margin-bottom: 1rem;
 }
 
 .contact-us p {
-    font-size: 1.6rem;
+    color: var(--textclr);
+    font-size: 1.2rem; /* Adjusted size */
+    margin-bottom: 2rem;
 }
 
-.contact-us a {
-    color: var(--mainclr);
-    font-weight: bold;
-    text-decoration: underline;
+@media (max-width: 767px) {
+    html {
+        font-size: 55%;
+    }
+
+    #menu-bar {
+        display: block;
+    }
+
+    .header {
+        padding: 1.5rem;
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        background: var(--headerclr);
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(-100%);
+        transition: transform 0.3s;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border-radius: 15px;
+        z-index: 10001;
+    }
+
+    .nav.active {
+        transform: translateY(0);
+    }
+
+    .nav a {
+        margin: 1rem 0;
+        font-size: 1.4rem;
+    }
+
+    .search-form {
+        width: 90%;
+        position: relative;
+        top: auto;
+        right: auto;
+        margin: 1rem 0;
+    }
+
+    .inner-back-text {
+        width: 90%;
+    }
+
+    .inner-welcome img {
+        margin-top: 1rem;
+        width: 100%;
+    }
+    
+    .inner-back-btn {
+        display: flex;
+        flex-direction: column; /* Stack buttons vertically on mobile */
+        gap: 1rem; /* Space between buttons */
+        align-items: center; /* Center buttons */
+    }
+
+    .inner-back-btn a {
+        padding: 1rem 2rem; /* Adjust padding for smaller screens */
+        font-size: 1.2rem; /* Adjust font size for better readability */
+        width: 100%; /* Full width for buttons on mobile */
+        max-width: 300px; /* Maximum width to avoid breaking */
+        text-align: center; /* Center text */
+    }
 }
