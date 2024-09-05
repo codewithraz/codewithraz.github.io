@@ -41,18 +41,20 @@ html {
 
 .nav {
     display: flex;
-    align-items: center;
+    justify-content: flex-end; /* Align items to the right */
+    width: 100%;
 }
 
 .nav a {
-    color: var(--textclr);
-    font-size: 1.5rem;
-    margin-left: 2rem; /* Increased spacing for clarity */
-    transition: color 0.3s ease; /* Smooth color transition */
+    color: var(--mainclr); /* Default color is green */
+    font-size: 1.8rem; /* Increase font size */
+    margin-left: 2rem; /* Increase space between links */
+    text-decoration: none; /* Ensure links have no underline */
+    line-height: 1.5; /* Adjust line height for better spacing */
 }
 
 .nav a:hover {
-    color: var(--mainclr);
+    color: var(--textclr); /* Change color to black on hover */
 }
 
 .icon-header div {
