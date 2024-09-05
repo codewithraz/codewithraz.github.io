@@ -71,7 +71,9 @@ html {
 #menu-bar {
     display: none;
 }
-
+.search-form {
+    display: none; /* Hide the search form */
+}
 .nav.active {
     top: 100%;
 }
