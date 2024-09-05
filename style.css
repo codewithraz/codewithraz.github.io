@@ -35,7 +35,7 @@ html {
 }
 
 #logo img {
-    max-width: 150px; /* Adjust the size of the logo */
+    max-width: 100px; /* Adjust the size of the logo */
     height: auto; /* Maintain the logo's aspect ratio */
 }
 
