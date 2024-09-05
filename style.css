@@ -75,11 +75,7 @@ html {
 }
 
 .search-form {
-    width: 50%;
-    position: absolute;
-    top: -110%;
-    right: 2rem;
-    transition: .2s;
+    display: none; /* Hide the search form */
 }
 
 .search-form input {
