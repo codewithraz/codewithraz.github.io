@@ -47,9 +47,10 @@ html {
 
 .nav a {
     color: var(--textclr);
-    font-size: 1.5rem;
-    margin-left: 1rem;
+    font-size: 1.8rem; /* Increase font size */
+    margin-left: 2rem; /* Increase space between links */
     text-decoration: none; /* Ensure links have no underline */
+    line-height: 1.5; /* Adjust line height for better spacing */
 }
 
 .nav a:hover {
