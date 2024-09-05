@@ -34,9 +34,9 @@ html {
     z-index: 10000;
 }
 
-#logo {
-    color: var(--mainclr);
-    font-size: 30px;
+#logo img {
+    max-width: 150px; /* Adjust the size of the logo */
+    height: auto; /* Maintain the logo's aspect ratio */
 }
 
 .nav a {
@@ -209,14 +209,6 @@ html {
     color: var(--mainclr);
 }
 
-.chose-text {
-    color: var(--textclr);
-    font-size: 1.5rem;
-    padding: 1rem 10rem;
-    text-align: center;
-    margin-bottom: 25px;
-}
-
 .main-chose {
     display: flex;
     justify-content: center;
@@ -261,217 +253,23 @@ html {
     padding: 0 1rem;
 }
 
-.our-services {
-    padding: 5rem 7%;
-}
-
-.our-services h1 {
-    color: var(--textclr);
-    font-size: 40px;
-    text-align: center;
-    padding: 1rem 0;
-}
-
-.our-services h1 span {
-    color: var(--mainclr);
-}
-
-.main-service {
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.inner-service {
-    flex: 1 1 300px;
-}
-
-.inner-service h2 {
-    padding: 1rem 0;
-    font-size: 2rem;
-}
-
-.inner-service p {
-    font-size: 1.5rem;
-    margin-bottom: 25px;
-}
-
-.inner-service a {
-    padding: 1.5rem 3rem;
-    background: var(--mainclr);
-    color: var(--headerclr);
-    border-radius: 15px;
-}
-
-.inner-service a:hover {
-    background: var(--textclr);
-    color: white;
-}
-
-.our-gallery {
-    padding: 4rem 7%;
-}
-
-.our-gallery h1 {
-    color: var(--textclr);
-    font-size: 40px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.our-gallery h1 span {
-    color: var(--mainclr);
-}
-
-.main-gallery {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.inner-gallery {
-    flex: 1 1 300px;
-}
-
-.inner-gallery img {
-    width: 100%;
-    height: 300px;
-    transition: .5s;
-}
-
-.inner-gallery img:hover {
-    transform: translateY(-25px);
-}
-
-.customer-review {
-    padding: 4rem 7%;
-}
-
-.customer-review h1 {
-    color: var(--textclr);
-    font-size: 40px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.customer-review h1 span {
-    color: var(--mainclr);
-}
-
-.main-review {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.inner-review {
-    flex: 1 1 300px;
-    padding: 3rem 2rem;
-    position: relative;
-    text-align: center;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-.inner-review:hover {
-    background: var(--mainclr);
-}
-
-.inner-review:hover i {
-    color: white;
-}
-
-.inner-review p {
-    font-size: 1.5rem;
-    padding: 1rem 2rem;
-}
-
-.inner-review img {
-    width: 50px;
-}
-
-.inner-review i {
-    position: absolute;
-    font-size: 3rem;
-    left: 1rem;
-    top: 1rem;
-    color: var(--mainclr);
-}
-
-/* Contact Us Section */
 .contact-us {
-    padding: 5rem 7%; /* Increased padding to match other sections */
+    padding: 5rem 7%;
     text-align: center;
-    background-color: var(--headerclr); /* Optional: matching background color */
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; /* Optional: add shadow for consistency */
+    background-color: var(--headerclr);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .contact-us h1 {
     color: var(--textclr);
-    font-size: 40px; /* Matching font size */
+    font-size: 40px;
     margin-bottom: 1rem;
 }
 
 .contact-us p {
     color: var(--textclr);
-    font-size: 1.5rem; /* Consistent font size for paragraph */
-    margin-bottom: 2rem; /* Adjust spacing as needed */
-}
-
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    background: var(--headerclr);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    color: var(--textclr);
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 1rem;
-    border-radius: 10px;
-    border: 1px solid var(--headerclr);
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    font-size: 1rem;
-}
-
-.form-group textarea {
-    resize: vertical;
-}
-
-.submit-btn {
-    padding: 1rem 2rem;
-    background: var(--mainclr);
-    color: var(--headerclr);
-    border: none;
-    border-radius: 15px;
     font-size: 1.5rem;
-    cursor: pointer;
-}
-
-.submit-btn:hover {
-    background: var(--textclr);
-    color: white;
-    letter-spacing: 2px;
+    margin-bottom: 2rem;
 }
 
 @media (max-width: 767px) {
@@ -516,9 +314,5 @@ html {
     .inner-welcome img {
         margin-top: 20px;
         text-align: center;
-    }
-
-    .chose-text {
-        padding: 1rem 2rem;
     }
 }
