@@ -28,7 +28,7 @@ html {
     left: 0;
     right: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Space between logo and nav items */
     align-items: center;
     background: var(--headerclr);
     z-index: 10000;
@@ -54,7 +54,6 @@ html {
 
 .nav a:hover {
     color: var(--textclr); /* Black color on hover */
-
 }
 
 .icon-header div {
