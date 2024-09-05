@@ -23,7 +23,7 @@ html {
 }
 
 .header {
-    padding: 2rem 7%;
+    padding: 1rem 5%; /* Reduced padding */
     position: fixed;
     left: 0;
     right: 0;
