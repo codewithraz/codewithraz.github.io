@@ -92,10 +92,6 @@ html {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.search-form.active {
-    top: 110%;
-}
-
 .background-image {
     background: url(images/backgroud\ image.png) no-repeat center center/cover;
     width: 100%;
