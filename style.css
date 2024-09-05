@@ -42,17 +42,21 @@ html {
 .nav {
     display: flex;
     align-items: center;
+    flex-grow: 1;
 }
 
 .nav a {
     color: var(--textclr);
-    font-size: 1.5rem;
-    margin-left: 2rem; /* Increased spacing for clarity */
+    font-size: 1.7rem; /* Increased font size */
+    margin-right: 3rem; /* Space out navigation items */
     transition: color 0.3s ease; /* Smooth color transition */
 }
 
 .nav a:hover {
-    color: var(--mainclr);
+    color: var(--textclr); /* Black text on hover */
+    background-color: var(--mainclr); /* Green background on hover */
+    padding: 0.5rem 1rem; /* Add padding for hover effect */
+    border-radius: 5px; /* Rounded corners */
 }
 
 .icon-header div {
@@ -130,82 +134,66 @@ html {
 }
 
 .inner-back-btn a {
-    margin: 0 1rem;
-    padding: 1.5rem 3rem;
-    display: inline-block;
-}
-
-.first-btn, .second-btn {
+    color: #fff;
     background: var(--mainclr);
-    border-radius: 15px;
-    color: var(--headerclr);
-    font-size: 1.5rem;
-    transition: background 0.3s, color 0.3s; /* Smooth background and color transition */
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    margin: 0 0.5rem;
+    transition: background-color 0.3s ease;
 }
 
-.first-btn:hover, .second-btn:hover {
-    background: var(--textclr);
-    color: white;
-    letter-spacing: 1px;
+.inner-back-btn a:hover {
+    background: #004d00;
 }
 
 .welcome {
-    padding: 3rem 7%;
+    padding: 5rem 7%;
 }
 
 .main-welcome {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 2rem; /* Increased gap for better spacing */
-}
-
-.inner-welcome {
-    flex: 1 1 45rem;
-    text-align: center;
-}
-
-.welcome-text h1 {
-    font-size: 3rem; /* Adjusted font size */
-    color: var(--mainclr);
-    margin-bottom: 1rem;
-}
-
-.welcome-text p {
-    font-size: 1.2rem; /* Slightly smaller font size for better readability */
-    padding: 1rem 0;
-    margin-bottom: 2rem;
-}
-
-.welcome-text a {
-    padding: 1.5rem 3rem;
-    background: var(--mainclr);
-    color: var(--headerclr);
-    font-size: 1.2rem;
-    border-radius: 15px;
-    transition: background 0.3s, color 0.3s; /* Smooth transition */
-}
-
-.welcome-text a:hover {
-    background: var(--textclr);
-    color: white;
+    justify-content: space-between;
 }
 
 .inner-welcome img {
     width: 100%;
-    max-width: 500px; /* Added max-width for better scaling */
+    max-width: 500px;
+    height: auto;
+}
+
+.welcome-text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.welcome-text p {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.wel-btn {
+    color: #fff;
+    background: var(--mainclr);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    transition: background-color 0.3s ease;
+}
+
+.wel-btn:hover {
+    background: #004d00;
 }
 
 .chose-us {
     padding: 5rem 7%;
-    background-color: var(--headerclr); /* Changed to variable */
+    background: #f9f9f9;
 }
 
 .chose-us h1 {
-    color: var(--textclr);
-    font-size: 3rem; /* Adjusted font size */
-    text-align: center;
-    padding: 2rem 1rem;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
 }
 
 .chose-us h1 span {
@@ -214,119 +202,43 @@ html {
 
 .main-chose {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem; /* Increased gap for better spacing */
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 
 .inner-chose {
-    flex: 1 1 200px;
+    flex: 1;
+    min-width: 220px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
     text-align: center;
 }
 
 .chose-icon {
-    width: 80px; /* Adjusted size */
-    height: 80px;
-    text-align: center;
-    line-height: 80px;
-    border: 6px solid var(--mainclr); /* Adjusted border size */
-    border-radius: 50%;
-    margin: 0 auto;
-}
-
-.chose-icon i {
-    font-size: 2rem; /* Adjusted size */
+    font-size: 3rem;
     color: var(--mainclr);
-    transition: color 0.3s, transform 0.3s;
-}
-
-.chose-icon i:hover {
-    color: var(--textclr);
-    transform: translateY(-10px); /* Reduced translation for smoother effect */
-}
-
-.inner-chose h2 {
-    font-size: 1.8rem; /* Adjusted size */
-    padding: 1rem 0;
-}
-
-.inner-chose p {
-    font-size: 1.2rem; /* Adjusted size */
-    padding: 0 1rem;
+    margin-bottom: 1rem;
 }
 
 .contact-us {
     padding: 5rem 7%;
+    background: var(--headerclr);
     text-align: center;
-    background-color: var(--headerclr); /* Changed to variable */
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .contact-us h1 {
-    color: var(--textclr);
-    font-size: 3rem; /* Adjusted size */
+    font-size: 2.5rem;
     margin-bottom: 1rem;
 }
 
 .contact-us p {
-    color: var(--textclr);
-    font-size: 1.2rem; /* Adjusted size */
-    margin-bottom: 2rem;
+    font-size: 1.6rem;
 }
 
-@media (max-width: 767px) {
-    html {
-        font-size: 55%;
-    }
-
-    #menu-bar {
-        display: block;
-    }
-
-    .header {
-        padding: 1.5rem;
-    }
-
-    .nav {
-        position: fixed;
-        top: 0;
-        right: 0;
-        background: var(--headerclr);
-        width: 100%;
-        height: 100%;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        transform: translateY(-100%);
-        transition: transform 0.3s;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        border-radius: 15px;
-        z-index: 10001;
-    }
-
-    .nav.active {
-        transform: translateY(0);
-    }
-
-    .nav a {
-        margin: 1rem 0;
-        font-size: 1.4rem;
-    }
-
-    .search-form {
-        width: 90%;
-        position: relative;
-        top: auto;
-        right: auto;
-        margin: 1rem 0;
-    }
-
-    .inner-back-text {
-        width: 90%;
-    }
-
-    .inner-welcome img {
-        margin-top: 1rem;
-        width: 100%;
-    }
+.contact-us a {
+    color: var(--mainclr);
+    font-weight: bold;
+    text-decoration: underline;
 }
