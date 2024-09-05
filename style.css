@@ -42,21 +42,19 @@ html {
 .nav {
     display: flex;
     align-items: center;
-    flex-grow: 1;
+    justify-content: flex-end; /* Aligns items to the right */
+    gap: 3rem; /* Increased spacing between items */
 }
 
 .nav a {
-    color: var(--textclr);
-    font-size: 1.7rem; /* Increased font size */
-    margin-right: 3rem; /* Space out navigation items */
+    color: var(--mainclr); /* Green color by default */
+    font-size: 1.5rem; /* Adjust as needed */
     transition: color 0.3s ease; /* Smooth color transition */
 }
 
 .nav a:hover {
-    color: var(--textclr); /* Black text on hover */
-    background-color: var(--mainclr); /* Green background on hover */
-    padding: 0.5rem 1rem; /* Add padding for hover effect */
-    border-radius: 5px; /* Rounded corners */
+    color: var(--textclr); /* Black color on hover */
+
 }
 
 .icon-header div {
