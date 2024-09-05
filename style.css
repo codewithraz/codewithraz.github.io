@@ -42,19 +42,21 @@ html {
 .nav {
     display: flex;
     align-items: center;
-    margin-left: auto; /* Align to the right */
+    margin-left: auto; /* Pushes the nav to the right */
 }
 
 .nav a {
     color: var(--textclr);
     font-size: 1.5rem;
-    margin-left: 2rem; /* Increased spacing for clarity */
+    margin-left: 3rem; /* Increased spacing for clarity */
     transition: color 0.3s ease; /* Smooth color transition */
 }
 
 .nav a:hover {
-    color: var(--textclr);
-    background: var(--mainclr); /* Change background to green */
+    color: var(--textclr); /* Hover color changed to black */
+    background-color: var(--mainclr); /* Background color on hover */
+    padding: 0.5rem 1rem; /* Added padding on hover */
+    border-radius: 5px; /* Rounded corners on hover */
 }
 
 .icon-header div {
@@ -216,14 +218,25 @@ html {
 
 .main-chose {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem; /* Increased gap for better spacing */
+    flex-wrap: wrap; /* Allows wrapping to next line if necessary */
+    justify-content: center; /* Center items horizontally */
+    align-items: stretch; /* Stretch items to fill container height */
+    gap: 2rem; /* Space between items */
 }
 
 .inner-chose {
-    flex: 1 1 200px;
+    flex: 1 1 300px; /* Flex-basis set to 300px; can adjust as needed */
+    max-width: 300px; /* Maximum width of each item */
     text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; /* Added shadow for better visibility */
+    border-radius: 10px; /* Rounded corners */
+    padding: 2rem; /* Padding inside each item */
+    background: #fff; /* Background color for items */
+    transition: transform 0.3s; /* Smooth transform transition */
+}
+
+.inner-chose:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
 }
 
 .chose-icon {
@@ -311,39 +324,78 @@ html {
     }
 
     .nav a {
-        margin: 1rem 0;
-        font-size: 1.4rem;
+        font-size: 2rem; /* Larger font size for mobile */
+        margin: 2rem 0; /* Increased spacing for clarity */
     }
 
     .search-form {
-        width: 90%;
-        position: relative;
-        top: auto;
-        right: auto;
-        margin: 1rem 0;
+        width: 80%;
+        top: -100%;
+        right: 0;
     }
 
-    .inner-back-text {
-        width: 90%;
+    .search-form.active {
+        top: 100%;
+    }
+
+    .inner-back-text h1 {
+        font-size: 3rem; /* Adjusted font size */
+    }
+
+    .inner-back-text p {
+        font-size: 1.2rem; /* Adjusted font size */
+    }
+
+    .welcome {
+        padding: 2rem 5%;
+    }
+
+    .welcome-text h1 {
+        font-size: 2.5rem; /* Adjusted font size */
+    }
+
+    .welcome-text p {
+        font-size: 1rem; /* Adjusted font size */
+    }
+
+    .welcome-text a {
+        font-size: 1rem; /* Adjusted font size */
     }
 
     .inner-welcome img {
-        margin-top: 1rem;
-        width: 100%;
-    }
-    
-    .inner-back-btn {
-        display: flex;
-        flex-direction: column; /* Stack buttons vertically on mobile */
-        gap: 1rem; /* Space between buttons */
-        align-items: center; /* Center buttons */
+        max-width: 100%; /* Ensure image scales properly */
     }
 
-    .inner-back-btn a {
-        padding: 1rem 2rem; /* Adjust padding for smaller screens */
-        font-size: 1.2rem; /* Adjust font size for better readability */
-        width: 100%; /* Full width for buttons on mobile */
-        max-width: 300px; /* Maximum width to avoid breaking */
-        text-align: center; /* Center text */
+    .chose-us {
+        padding: 2rem 5%;
+    }
+
+    .chose-us h1 {
+        font-size: 2.5rem; /* Adjusted font size */
+    }
+
+    .inner-chose {
+        flex: 1 1 100%; /* Full width on mobile */
+        max-width: 100%; /* Full width on mobile */
+    }
+
+    .inner-chose h2 {
+        font-size: 1.5rem; /* Adjusted font size */
+    }
+
+    .inner-chose p {
+        font-size: 1rem; /* Adjusted font size */
+    }
+
+    .contact-us {
+        padding: 2rem 5%;
+    }
+
+    .contact-us h1 {
+        font-size: 2.5rem; /* Adjusted font size */
+    }
+
+    .contact-us p {
+        font-size: 1rem; /* Adjusted font size */
     }
 }
