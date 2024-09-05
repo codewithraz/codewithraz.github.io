@@ -3,7 +3,7 @@
 :root {
     --headerclr: #e8f5e9; /* Light background color */
     --mainclr: #04943c;   /* Deep green color */
-    --textclr: #FFFF;   /* White text color */
+    --textclr: #000000;   /* Black text color */
 }
 
 * {
