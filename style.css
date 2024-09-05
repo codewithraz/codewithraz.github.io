@@ -23,7 +23,9 @@ html {
 }
 
 .header {
-    padding: 2rem 7%;
+    max-width: 1200px; /* Adjusted width */
+    margin: 0 auto; /* Center align the header */
+    padding: 1rem 5%; /* Adjusted padding to make the header background narrower */
     position: fixed;
     left: 0;
     right: 0;
@@ -130,27 +132,13 @@ html {
 }
 
 .inner-back-btn {
-    display: flex; /* Use flexbox for horizontal alignment */
-    flex-direction: row; /* Align buttons horizontally */
-    justify-content: center; /* Center buttons horizontally */
-    gap: 1rem; /* Space between buttons */
     margin-top: 2rem;
 }
 
 .inner-back-btn a {
-    padding: 1rem 2rem; /* Adjust padding for smaller screens */
-    border-radius: 15px;
-    color: var(--headerclr);
-    font-size: 1.2rem;
-    text-align: center;
-    text-decoration: none;
-    background: var(--mainclr);
-    transition: background 0.3s, color 0.3s;
-}
-
-.inner-back-btn a:hover {
-    background: var(--textclr);
-    color: white;
+    margin: 0 1rem;
+    padding: 1.5rem 3rem;
+    display: inline-block;
 }
 
 .first-btn, .second-btn {
@@ -313,7 +301,9 @@ html {
     }
 
     .header {
-        padding: 1.5rem;
+        max-width: 100%; /* Full width on mobile */
+        margin: 0; /* Remove centering margin */
+        padding: 1.5rem; /* Adjusted padding */
     }
 
     .nav {
@@ -326,45 +316,74 @@ html {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        transform: translateY(-100%);
+        transform: translateX(100%);
         transition: transform 0.3s ease;
     }
 
     .nav.active {
-        transform: translateY(0);
+        transform: translateX(0);
+    }
+
+    .nav a {
+        margin-left: 0;
+        margin-bottom: 2rem; /* Spacing between items */
     }
 
     .search-form {
         width: 80%;
-        top: 5rem;
+        top: 100%;
+        right: 1rem;
     }
 
-    .inner-back-btn {
-        display: flex; /* Use flexbox for horizontal alignment */
-        flex-direction: row; /* Align buttons horizontally */
-        justify-content: center; /* Center buttons horizontally */
-        gap: 1rem; /* Space between buttons */
-        margin-top: 2rem;
+    .search-form.active {
+        top: 0;
     }
 
-    .inner-back-btn a {
-        width: auto; /* Adjust width of buttons */
-        padding: 1rem 2rem; /* Adjust padding for smaller screens */
-        border-radius: 15px;
-        color: var(--headerclr);
-        font-size: 1.2rem;
-        text-align: center;
-        text-decoration: none;
-        background: var(--mainclr);
-        transition: background 0.3s, color 0.3s;
+    .main-chose {
+        flex-direction: column; /* Stack items vertically on mobile */
     }
 
-    .inner-back-btn a:hover {
-        background: var(--textclr);
-        color: white;
+    .inner-chose {
+        flex: 1 1 auto; /* Allow items to grow and fill available space */
+        max-width: 100%; /* Full width on mobile */
     }
 
-    .welcome-text a {
-        padding: 1rem 2rem; /* Adjusted padding for smaller screens */
+    .contact-us {
+        padding: 3rem 5%;
+    }
+
+    .contact-us .inner-contact {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .contact-us .inner-contact div {
+        width: 100%; /* Full width on mobile */
+    }
+
+    .contact-us .inner-contact div img {
+        width: 50%; /* Adjusted size */
+        margin-bottom: 1rem;
+    }
+
+    .contact-us .inner-contact div h2 {
+        font-size: 2rem; /* Adjusted size */
+    }
+}
+
+@media (max-width: 500px) {
+    html {
+        font-size: 50%;
+    }
+
+    .header {
+        padding: 1rem; /* Reduced padding on smaller screens */
+    }
+
+    .search-form {
+        width: 90%; /* Full width on very small screens */
+    }
+
+    .contact-us .inner-contact div img {
+        width: 60%; /* Adjusted size */
     }
 }
