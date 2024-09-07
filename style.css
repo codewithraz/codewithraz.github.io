@@ -113,42 +113,57 @@ html {
 
 @media (max-width: 767px) {
     html {
-        font-size: 65%; /* Increased font size for mobile */
+        font-size: 60%; /* Slightly reduced font size for mobile */
     }
 
     .header {
-        padding: 2rem 4%; /* Increased padding for mobile */
+        padding: 1rem 4%; /* Reduced padding for mobile */
+        height: auto; /* Ensures it doesn't take up extra space */
+    }
+
+    #logo img {
+        max-width: 100px; /* Reduced logo size for mobile */
     }
 
     .nav a {
-        font-size: 1.8rem; /* Adjusted font size for mobile */
+        font-size: 1.4rem; /* Smaller font size for navigation links */
+        margin-left: 2rem; /* Reduced margin */
+    }
+
+    .icon-header div {
+        font-size: 2rem; /* Reduced icon size */
+        margin-left: 1.5rem;
     }
 
     .search-form input {
-        padding: 1.2rem; /* Adjusted padding for mobile */
+        padding: 1rem; /* Reduced padding */
     }
 
     .inner-back-text h1 {
-        font-size: 4.2rem; /* Adjusted font size for mobile */
+        font-size: 3.5rem; /* Reduced font size */
     }
 
     .inner-back-text p {
-        font-size: 1.8rem; /* Adjusted font size for mobile */
+        font-size: 1.4rem; /* Reduced font size */
     }
 
     .welcome-text h1 {
-        font-size: 3.5rem; /* Adjusted font size for mobile */
+        font-size: 3rem; /* Reduced font size */
     }
 
     .welcome-text p {
-        font-size: 1.4rem; /* Adjusted font size for mobile */
+        font-size: 1.2rem; /* Reduced font size */
     }
 
     .contact-us h1 {
-        font-size: 3.5rem; /* Adjusted font size for mobile */
+        font-size: 3rem; /* Reduced font size */
     }
 
     .contact-us p {
-        font-size: 1.4rem; /* Adjusted font size for mobile */
+        font-size: 1.2rem; /* Reduced font size */
+    }
+
+    .nav {
+        padding: 2rem 0; /* Reduced padding for mobile */
     }
 }
