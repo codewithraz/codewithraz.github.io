@@ -22,6 +22,14 @@
             margin: auto;
         }
 
+        .tax-invoice-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: none; /*shows only in PDF */
+        }
+
         .invoice-header {
             display: flex;
             justify-content: space-between;
@@ -135,6 +143,9 @@
             #invoice-table th.action-column, #invoice-table td.action-column {
                 display: none !important;
             }
+            .tax-invoice-title {
+            display: block;
+            }
         }
 
         /* Final area for signature */
@@ -167,13 +178,14 @@
 </head>
 <body>
     <div class="invoice">
+        <div class="tax-invoice-title">Tax Invoice</div>
         <div class="invoice-header">
             <div>
                 <h1>GreenFort Materials</h1>
                 <p>Hamza's Thekathil Kada Junction,<br>Kaniyapuram P.O,<br>Thiruvananthapuram, 695301</p>
                 <p>Phone: +91 9809289089 | Email: greenfortmaterials@gmail.com</p>
             </div>
-            <img src="./images/logo.png" alt="Company Logo">
+            <img src="./img/logo.png" alt="Company Logo">
         </div>
 
         <div class="invoice-details">
@@ -258,10 +270,10 @@
             </div>
             <div>
                 <h3>Bank Details:</h3>
-                <p><strong>Account Holder:</strong>GreenFort Materials</p>
-                <p><strong>Bank Name:</strong>State Bank of India</p>
-                <p><strong>Account Number:</strong>43335895627</p>
-                <p><strong>IFSC Code:</strong>SBIN0070045</p>
+                <p><strong>Bank Name:</strong> Dummy Bank</p>
+                <p><strong>Account Number:</strong> 1234567890</p>
+                <p><strong>IFSC Code:</strong> DUMMY0001</p>
+                <p><strong>Branch:</strong> Dummy Branch</p>
             </div>
         </div>
 
@@ -371,4 +383,3 @@
     </script>
 </body>
 </html>
-           
