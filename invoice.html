@@ -61,16 +61,6 @@
             padding: 5px;
         }
 
-        /* Increased width for specific inputs */
-        #customer-address {
-            grid-column: span 2; /* Span two columns for more space */
-        }
-
-        /* Increased width for product name input in the table */
-        #invoice-table input[name="product-name"] {
-            width: 200px; /* Adjust width as necessary */
-        }
-
         .invoice-body {
             margin-top: 10px; /* Adjusted margin */
         }
@@ -277,76 +267,108 @@
 
         <div class="signature-area">
             <div>
-                <p>Prepared By:</p>
-                <p>(Signature)</p>
+                <p>Authorized Signatory/Name</p>
+                <p>____________________</p>
             </div>
             <div>
-                <p>Received By:</p>
-                <p>(Signature)</p>
+                <p>Seal</p>
+                <p>____________________</p>
             </div>
         </div>
 
         <div class="invoice-footer">
-            <button onclick="addRow()">Add Product</button>
-            <button onclick="generateInvoice()">Generate Invoice</button>
+            <button onclick="addRow()">Add Row</button>
+            <button onclick="calculateTotal()">Calculate Total</button>
+            <button onclick="clearForm()">Clear All</button>
+            <button onclick="window.print()">Print Invoice</button>
         </div>
     </div>
 
     <script>
-        // JavaScript functions to handle the invoice generation and dynamic row addition
+        let counter = 1; // Counter to keep track of serial number
+
+        const invoiceTable = document.getElementById('invoice-table').querySelector('tbody');
+        const subtotalCell = document.getElementById('subtotal');
+        const cgstTotalCell = document.getElementById('cgst-total');
+        const sgstTotalCell = document.getElementById('sgst-total');
+        const totalCell = document.getElementById('total');
+
         function addRow() {
-            const tableBody = document.querySelector("#invoice-table tbody");
-            const rowCount = tableBody.rows.length + 1;
-            const newRow = `
-                <tr>
-                    <td>${rowCount}</td>
-                    <td><input type="text" name="product-name" required></td>
-                    <td><input type="number" name="quantity" value="1" min="1" required></td>
-                    <td><input type="number" name="price" required></td>
-                    <td><input type="number" name="cgst-rate" value="0" required></td>
-                    <td><input type="number" name="sgst-rate" value="0" required></td>
-                    <td class="total">0.00</td>
-                    <td class="action-column"><button onclick="deleteRow(this)">Delete</button></td>
-                </tr>
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${counter++}</td>
+                <td><input type="text" name="product-name"></td>
+                <td><input type="number" name="quantity" min="0" value="0"></td>
+                <td><input type="number" name="price" min="0" value="0"></td>
+                <td><input type="number" name="cgst-rate" min="0" value="0"></td>
+                <td><input type="number" name="sgst-rate" min="0" value="0"></td>
+                <td><span class="total">0.00</span></td>
+                <td class="action-column"><button onclick="removeRow(this)">Remove</button></td>
             `;
-            tableBody.insertAdjacentHTML('beforeend', newRow);
-            calculateTotals();
+            invoiceTable.appendChild(row);
         }
 
-        function deleteRow(button) {
+        function removeRow(button) {
             const row = button.closest('tr');
             row.remove();
-            calculateTotals();
+            calculateTotal();
         }
 
-        function calculateTotals() {
-            const tableBody = document.querySelector("#invoice-table tbody");
-            let subtotal = 0;
-            const rows = tableBody.querySelectorAll('tr');
-            rows.forEach(row => {
-                const quantity = parseFloat(row.querySelector('input[name="quantity"]').value) || 0;
-                const price = parseFloat(row.querySelector('input[name="price"]').value) || 0;
-                const cgstRate = parseFloat(row.querySelector('input[name="cgst-rate"]').value) || 0;
-                const sgstRate = parseFloat(row.querySelector('input[name="sgst-rate"]').value) || 0;
+        function calculateTotal() {
+    let subtotal = 0;
+    let cgstTotal = 0;
+    let sgstTotal = 0;
 
-                const total = quantity * price;
-                row.querySelector('.total').innerText = total.toFixed(2);
-                subtotal += total;
-            });
+    invoiceTable.querySelectorAll('tr').forEach(row => {
+        const quantity = parseInt(row.querySelector('[name="quantity"]').value) || 0;
+        const sellingPrice = parseFloat(row.querySelector('[name="price"]').value) || 0;
+        const cgstRate = parseFloat(row.querySelector('[name="cgst-rate"]').value) || 0;
+        const sgstRate = parseFloat(row.querySelector('[name="sgst-rate"]').value) || 0;
 
-            const cgstTotal = subtotal * 0.09; // 9% CGST
-            const sgstTotal = subtotal * 0.09; // 9% SGST
-            const grandTotal = subtotal + cgstTotal + sgstTotal;
+        // Combine SGST and CGST rates
+        const totalTaxRate = cgstRate + sgstRate;
 
-            document.querySelector("#subtotal").innerText = subtotal.toFixed(2);
-            document.querySelector("#cgst-total").innerText = cgstTotal.toFixed(2);
-            document.querySelector("#sgst-total").innerText = sgstTotal.toFixed(2);
-            document.querySelector("#total").innerText = grandTotal.toFixed(2);
-        }
+        // Calculate price before tax from the selling price
+        const priceBeforeTax = sellingPrice / (1 + (totalTaxRate / 100));
 
-        function generateInvoice() {
-            window.print();
+        // Calculate the subtotal (price before tax * quantity)
+        const lineSubtotal = priceBeforeTax * quantity;
+
+        // Calculate CGST and SGST amounts based on the line subtotal
+        const cgstAmount = (lineSubtotal * cgstRate) / 100;
+        const sgstAmount = (lineSubtotal * sgstRate) / 100;
+
+        // Calculate the total for the row (line subtotal + CGST + SGST)
+        const rowTotal = lineSubtotal + cgstAmount + sgstAmount;
+
+        // Update the row's total in the table
+        row.querySelector('.total').textContent = rowTotal.toFixed(2);
+
+        // Accumulate subtotal, CGST, and SGST totals
+        subtotal += lineSubtotal;
+        cgstTotal += cgstAmount;
+        sgstTotal += sgstAmount;
+    });
+
+    // Update the subtotal, CGST, SGST, and grand total in the table
+    subtotalCell.textContent = subtotal.toFixed(2);
+    cgstTotalCell.textContent = cgstTotal.toFixed(2);
+    sgstTotalCell.textContent = sgstTotal.toFixed(2);
+    totalCell.textContent = (subtotal + cgstTotal + sgstTotal).toFixed(2);
+}
+
+
+        function clearForm() {
+            invoiceTable.innerHTML = '';
+            subtotalCell.textContent = '0.00';
+            cgstTotalCell.textContent = '0.00';
+            sgstTotalCell.textContent = '0.00';
+            totalCell.textContent = '0.00';
+            document.getElementById('amount-in-words').value = '';
+            document.getElementById('remarks').value = '';
+            counter = 1;
         }
     </script>
 </body>
 </html>
+           
