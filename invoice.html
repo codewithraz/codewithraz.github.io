@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Generator</title>
+    <style>
+        /* CSS styles to format the invoice */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .invoice {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            max-width: 800px; /* Reduced width for better printing */
+            margin: auto;
+        }
+
+        .invoice-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #07943f;
+            padding-bottom: 10px;
+        }
+
+        .invoice-header h1 {
+            color: #07943f;
+            margin: 0;
+            font-size: 18px; /* Adjusted font size */
+        }
+
+        .invoice-header img {
+            width: 100px; /* Reduced logo size */
+        }
+
+        .invoice-details {
+            margin: 15px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px; /* Reduced gap for tighter layout */
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+            color: #07943f;
+        }
+
+        .invoice-details input[type="text"],
+        .invoice-details input[type="date"],
+        .invoice-details select {
+            font-size: 12px;
+            width: 100%;
+            padding: 5px;
+        }
+
+        /* Increased width for specific inputs */
+        #customer-address {
+            grid-column: span 2; /* Span two columns for more space */
+        }
+
+        /* Increased width for product name input in the table */
+        #invoice-table input[name="product-name"] {
+            width: 200px; /* Adjust width as necessary */
+        }
+
+        .invoice-body {
+            margin-top: 10px; /* Adjusted margin */
+        }
+
+        .invoice-body table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .invoice-body table th {
+            background-color: #07943f;
+            color: white;
+            padding: 6px; /* Reduced padding */
+            text-align: left;
+            font-size: 12px; /* Adjusted font size */
+        }
+
+        .invoice-body table td {
+            padding: 6px; /* Reduced padding */
+            border: 1px solid #ccc;
+            text-align: left;
+            font-size: 12px; /* Adjusted font size */
+        }
+
+        .invoice-body table input[type="text"],
+        .invoice-body table input[type="number"],
+        .invoice-body table select {
+            width: 100%;
+            padding: 4px; /* Reduced padding */
+            border: none;
+            background-color: #f9f9f9;
+            font-size: 12px; /* Consistent font size */
+        }
+
+        .invoice-footer {
+            text-align: right;
+            margin-top: 10px; /* Reduced margin */
+        }
+
+        .invoice-footer button {
+            background-color: #07943f;
+            color: white;
+            padding: 6px 10px; /* Reduced padding */
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-right: 5px;
+            font-size: 12px;
+        }
+
+        .invoice-footer button:hover {
+            background-color: #066c31;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            .invoice {
+                max-width: none;
+                box-shadow: none;
+            }
+            input, select {
+                border: none !important;
+                outline: none !important;
+                background: none !important;
+            }
+            button {
+                display: none !important;
+            }
+            #invoice-table th.action-column, #invoice-table td.action-column {
+                display: none !important;
+            }
+        }
+
+        /* Final area for signature */
+        .signature-area {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            border-top: 2px solid #07943f;
+            padding-top: 10px;
+        }
+
+        .signature-area div {
+            text-align: center;
+            width: 45%;
+            font-size: 12px; /* Adjusted font size */
+        }
+
+        .amount-in-words {
+            width: 100%;
+            margin-top: 10px;
+            font-size: 12px;
+        }
+
+        .remarks {
+            width: 100%;
+            margin-top: 10px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="invoice">
+        <div class="invoice-header">
+            <div>
+                <h1>GreenFort Materials</h1>
+                <p>Hamza's Thekathil Kada Junction,<br>Kaniyapuram P.O,<br>Thiruvananthapuram, 695301</p>
+                <p>Phone: +91 9809289089 | Email: greenfortmaterials@gmail.com</p>
+            </div>
+            <img src="./img/logo.png" alt="Company Logo">
+        </div>
+
+        <div class="invoice-details">
+            <div>
+                <label for="invoice-number">Invoice #:</label>
+                <input type="text" id="invoice-number" name="invoice-number" value="1234">
+            </div>
+            <div>
+                <label for="invoice-date">Date:</label>
+                <input type="date" id="invoice-date" name="invoice-date" required>
+            </div>
+            <div>
+                <label for="customer-name">Customer Name:</label>
+                <input type="text" id="customer-name" name="customer-name">
+            </div>
+            <div>
+                <label for="customer-address">Customer Address:</label>
+                <input type="text" id="customer-address" name="customer-address">
+            </div>
+            <div>
+                <label for="payment-mode">Payment Mode:</label>
+                <select id="payment-mode" name="payment-mode">
+                    <option value="Cash">Cash</option>
+                    <option value="UPI">UPI</option>
+                    <option value="Cheque">Cheque</option>
+                    <option value="Bank Transfer">Bank Transfer</option>
+                </select>
+            </div>
+            <div>
+                <label for="mode-of-transport">Mode of Transport:</label>
+                <input type="text" id="mode-of-transport" name="mode-of-transport" value="By Road" readonly>
+            </div>
+            <div>
+                <label for="vehicle-number">Vehicle Number:</label>
+                <input type="text" id="vehicle-number" name="vehicle-number">
+            </div>
+        </div>
+
+        <div class="invoice-body">
+            <table id="invoice-table">
+                <thead>
+                    <tr>
+                        <th>SL. No</th>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>CGST Rate (%)</th>
+                        <th>SGST Rate (%)</th>
+                        <th>Total</th>
+                        <th class="action-column">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows added dynamically here -->
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="6"><strong>Subtotal:</strong></td>
+                        <td id="subtotal">0.00</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6"><strong>CGST:</strong></td>
+                        <td id="cgst-total">0.00</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6"><strong>SGST:</strong></td>
+                        <td id="sgst-total">0.00</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6"><strong>Total:</strong></td>
+                        <td id="total">0.00</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <div>
+                <label for="amount-in-words">Amount in Words:</label>
+                <input type="text" id="amount-in-words" name="amount-in-words" class="amount-in-words" placeholder="Enter amount in words">
+            </div>
+            <div>
+                <label for="remarks">Remarks:</label>
+                <input type="text" id="remarks" name="remarks" class="remarks" placeholder="Enter remarks here...">
+            </div>
+            <div>
+                <h3>Bank Details:</h3>
+                <p><strong>Bank Name:</strong> Dummy Bank</p>
+                <p><strong>Account Number:</strong> 1234567890</p>
+                <p><strong>IFSC Code:</strong> DUMMY0001</p>
+            </div>
+        </div>
+
+        <div class="signature-area">
+            <div>
+                <p>Prepared By:</p>
+                <p>(Signature)</p>
+            </div>
+            <div>
+                <p>Received By:</p>
+                <p>(Signature)</p>
+            </div>
+        </div>
+
+        <div class="invoice-footer">
+            <button onclick="addRow()">Add Product</button>
+            <button onclick="generateInvoice()">Generate Invoice</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript functions to handle the invoice generation and dynamic row addition
+        function addRow() {
+            const tableBody = document.querySelector("#invoice-table tbody");
+            const rowCount = tableBody.rows.length + 1;
+            const newRow = `
+                <tr>
+                    <td>${rowCount}</td>
+                    <td><input type="text" name="product-name" required></td>
+                    <td><input type="number" name="quantity" value="1" min="1" required></td>
+                    <td><input type="number" name="price" required></td>
+                    <td><input type="number" name="cgst-rate" value="0" required></td>
+                    <td><input type="number" name="sgst-rate" value="0" required></td>
+                    <td class="total">0.00</td>
+                    <td class="action-column"><button onclick="deleteRow(this)">Delete</button></td>
+                </tr>
+            `;
+            tableBody.insertAdjacentHTML('beforeend', newRow);
+            calculateTotals();
+        }
+
+        function deleteRow(button) {
+            const row = button.closest('tr');
+            row.remove();
+            calculateTotals();
+        }
+
+        function calculateTotals() {
+            const tableBody = document.querySelector("#invoice-table tbody");
+            let subtotal = 0;
+            const rows = tableBody.querySelectorAll('tr');
+            rows.forEach(row => {
+                const quantity = parseFloat(row.querySelector('input[name="quantity"]').value) || 0;
+                const price = parseFloat(row.querySelector('input[name="price"]').value) || 0;
+                const cgstRate = parseFloat(row.querySelector('input[name="cgst-rate"]').value) || 0;
+                const sgstRate = parseFloat(row.querySelector('input[name="sgst-rate"]').value) || 0;
+
+                const total = quantity * price;
+                row.querySelector('.total').innerText = total.toFixed(2);
+                subtotal += total;
+            });
+
+            const cgstTotal = subtotal * 0.09; // 9% CGST
+            const sgstTotal = subtotal * 0.09; // 9% SGST
+            const grandTotal = subtotal + cgstTotal + sgstTotal;
+
+            document.querySelector("#subtotal").innerText = subtotal.toFixed(2);
+            document.querySelector("#cgst-total").innerText = cgstTotal.toFixed(2);
+            document.querySelector("#sgst-total").innerText = sgstTotal.toFixed(2);
+            document.querySelector("#total").innerText = grandTotal.toFixed(2);
+        }
+
+        function generateInvoice() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
