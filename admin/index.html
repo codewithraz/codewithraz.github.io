@@ -184,6 +184,36 @@
         }
     </style>
 </head>
+    <script>
+        // Hardcoded encrypted username and password (hashed)
+        const encryptedUsername = "b26c3e8c8491d5c48927a62f75fca550"; 
+        const encryptedPassword = "a3c35c2d916b9e8bc0c0b57e42ff4f20";
+
+        // Function to hash a string using the Web Crypto API
+        async function hashString(str) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(str);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => ('0' + b.toString(16)).slice(-2)).join('');
+        }
+
+        async function login(inputUsername, inputPassword) {
+            const inputEncryptedUsername = await hashString(inputUsername);
+            const inputEncryptedPassword = await hashString(inputPassword);
+
+            if (inputEncryptedUsername === encryptedUsername && inputEncryptedPassword === encryptedPassword) {
+                console.log("Login successful!");
+            } else {
+                console.log("Login failed. Please check your username and password.");
+            }
+        }
+
+        const userInputUsername = prompt("Enter your username:");
+        const userInputPassword = prompt("Enter your password:");
+
+        login(userInputUsername, userInputPassword);
+    </script>
 <body>
     <div class="invoice">
         <div class="tax-invoice-title" id="print-title" style="display: none;">Tax Invoice</div>
