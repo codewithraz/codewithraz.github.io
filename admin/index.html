@@ -184,48 +184,6 @@
         }
     </style>
 </head>
-   <script>
-    // Hardcoded encrypted username and password using SHA-256
-    const encryptedUsername = "865221eba7762660d237f2ce5d8f4c2bf587c9b05c47520e3f1934fad2f486b6";
-    const encryptedPassword = "a7c27a13d7cfc3e03202a28aebef431ee6a9e9bc4096b4d76e6ec4eb5cfc5cd4"; 
-
-    // Function to encrypt a string using SHA-256
-    async function encryptString(input) {
-        const encoder = new TextEncoder();
-        const data = encoder.encode(input);
-        const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-        const hashArray = Array.from(new Uint8Array(hashBuffer));
-        return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-    }
-
-    // Login function
-    async function login(inputUsername, inputPassword) {
-        const inputEncryptedUsername = await encryptString(inputUsername);
-        const inputEncryptedPassword = await encryptString(inputPassword);
-        
-        if (inputEncryptedUsername === encryptedUsername && inputEncryptedPassword === encryptedPassword) {
-            // Successful login: Allow access to the current page
-            alert("Login successful!"); 
-            // Optionally, you could redirect to a different page or perform other actions here
-            // For example, you might want to load content dynamically instead of just refreshing
-            // window.location.reload(); // Uncomment if you want to refresh the page
-        } else {
-            // Failed login: Redirect to a different page
-            window.location.href = "https://thegreenfort.com"; 
-        }
-    }
-
-    // Simulating user input
-    async function getUserInput() {
-        const userInputUsername = prompt("Enter your username:");
-        const userInputPassword = prompt("Enter your password:");
-        await login(userInputUsername, userInputPassword);
-    }
-
-    // Start the process
-    getUserInput();
-</script>
-
 <body>
     <div class="invoice">
         <div class="tax-invoice-title" id="print-title" style="display: none;">Tax Invoice</div>
