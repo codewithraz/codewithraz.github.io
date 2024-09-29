@@ -1,5 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+    <script>
+    // Function to encode a string to Base64
+    function encodeBase64(str) {
+        return btoa(unescape(encodeURIComponent(str)));
+    }
+
+    // Function to prompt for login
+    function promptLogin() {
+        const username = prompt("Enter your username:");
+        const password = prompt("Enter your password:");
+
+        // Store encoded credentials in an object
+        const validCredentials = {
+            username: encodeBase64("admin"), // "admin" encoded
+            password: encodeBase64("password123") // "password123" encoded
+        };
+
+        // Encode the input values
+        const encodedUsername = encodeBase64(username);
+        const encodedPassword = encodeBase64(password);
+
+        // Check if the entered credentials match the stored values
+        if (encodedUsername === validCredentials.username && encodedPassword === validCredentials.password) {
+            alert("Login successful!");
+        } else {
+            alert("Invalid credentials. Please try again.");
+            promptLogin(); // Restart the prompt on failure
+        }
+    }
+
+    // Call the login prompt when the window loads
+    window.onload = promptLogin;
+</script>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
