@@ -1,38 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
     <script>
-    const crypto = require('crypto');
+        // Hardcoded encrypted username and password (hashed)
+        const encryptedUsername = "b26c3e8c8491d5c48927a62f75fca550"; // MD5 hash for "admin"
+        const encryptedPassword = "a3c35c2d916b9e8bc0c0b57e42ff4f20"; // MD5 hash for "password123"
 
-// Hardcoded encrypted username and password
-const encryptedUsername = "b26c3e8c8491d5c48927a62f75fca550";
-const encryptedPassword = "a3c35c2d916b9e8bc0c0b57e42ff4f20";
+        // Function to hash a string using the Web Crypto API
+        async function hashString(str) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(str);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data); // Use SHA-256 instead of MD5
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => ('0' + b.toString(16)).slice(-2)).join('');
+        }
 
-// Function to encrypt a string using MD5 (for demonstration purposes)
-function encryptString(input) {
-    const hash = crypto.createHash('md5'); 
-    hash.update(input);
-    return hash.digest('hex');
-}
+        // Login function
+        async function login(inputUsername, inputPassword) {
+            const inputEncryptedUsername = await hashString(inputUsername);
+            const inputEncryptedPassword = await hashString(inputPassword);
 
-// Login function
-function login(inputUsername, inputPassword) {
-    const inputEncryptedUsername = encryptString(inputUsername);
-    const inputEncryptedPassword = encryptString(inputPassword);
-    
-    if (inputEncryptedUsername === encryptedUsername && inputEncryptedPassword === encryptedPassword) {
-        console.log("Login successful!");
-    } else {
-        console.log("Login failed. Please check your username and password.");
-    }
-}
+            if (inputEncryptedUsername === encryptedUsername && inputEncryptedPassword === encryptedPassword) {
+                console.log("Login successful!");
+            } else {
+                console.log("Login failed. Please check your username and password.");
+            }
+        }
 
-// Simulating user input (in a real browser environment)
-const userInputUsername = prompt("Enter your username:");
-const userInputPassword = prompt("Enter your password:");
+        // Simulating user input (in a real browser environment)
+        const userInputUsername = prompt("Enter your username:");
+        const userInputPassword = prompt("Enter your password:");
 
-login(userInputUsername, userInputPassword);
-
-</script>
+        login(userInputUsername, userInputPassword);
+    </script>
 
 <head>
     <meta charset="UTF-8">
