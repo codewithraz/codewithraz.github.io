@@ -185,34 +185,40 @@
     </style>
 </head>
     <script>
-        // Hardcoded encrypted username and password (hashed)
-        const encryptedUsername = "b26c3e8c8491d5c48927a62f75fca550"; 
-        const encryptedPassword = "a3c35c2d916b9e8bc0c0b57e42ff4f20";
+        // Hardcoded encrypted username and password using SHA-256
+        const encryptedUsername = "865221eba7762660d237f2ce5d8f4c2bf587c9b05c47520e3f1934fad2f486b6";
+        const encryptedPassword = "a7c27a13d7cfc3e03202a28aebef431ee6a9e9bc4096b4d76e6ec4eb5cfc5cd4"; 
 
-        // Function to hash a string using the Web Crypto API
-        async function hashString(str) {
+        // Function to encrypt a string using SHA-256
+        async function encryptString(input) {
             const encoder = new TextEncoder();
-            const data = encoder.encode(str);
+            const data = encoder.encode(input);
             const hashBuffer = await crypto.subtle.digest('SHA-256', data);
             const hashArray = Array.from(new Uint8Array(hashBuffer));
-            return hashArray.map(b => ('0' + b.toString(16)).slice(-2)).join('');
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
         }
 
+        // Login function
         async function login(inputUsername, inputPassword) {
-            const inputEncryptedUsername = await hashString(inputUsername);
-            const inputEncryptedPassword = await hashString(inputPassword);
-
+            const inputEncryptedUsername = await encryptString(inputUsername);
+            const inputEncryptedPassword = await encryptString(inputPassword);
+            
             if (inputEncryptedUsername === encryptedUsername && inputEncryptedPassword === encryptedPassword) {
-                console.log("Login successful!");
+                alert("Login successful!");
             } else {
-                console.log("Login failed. Please check your username and password.");
+                window.location.href = "https://thegreenfort.com"; 
             }
         }
 
-        const userInputUsername = prompt("Enter your username:");
-        const userInputPassword = prompt("Enter your password:");
+        // Simulating user input
+        async function getUserInput() {
+            const userInputUsername = prompt("Enter your username:");
+            const userInputPassword = prompt("Enter your password:");
+            await login(userInputUsername, userInputPassword);
+        }
 
-        login(userInputUsername, userInputPassword);
+        // Start the process
+        getUserInput();
     </script>
 <body>
     <div class="invoice">
