@@ -1,31 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-    <script>
-	const correctHashedPassword = "c5c6bbe4b7c13cec1edea248517e01a8aa2f4024229e36b2ee3f9454e3a0034b";
-	async function hashPassword(password) {
-		const encoder = new TextEncoder();
-		const data = encoder.encode(password);
-		const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-		const hashArray = Array.from(new Uint8Array(hashBuffer));
-		return hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
-	}
-
-	async function checkPassword() {
-		const userInput = prompt("Please enter the Access Code:");
-		const hashedUserInput = await hashPassword(userInput);
-
-		if (hashedUserInput === correctHashedPassword) {
-			// Password is correct, allow access
-			document.getElementById("sensitiveContent").style.display = "block";
-		} else {
-			// Password is incorrect, redirect to Google
-			window.location.href = "https://www.thegreenfort.com";
-		}
-	}
-
-	// Call the function on page load
-	window.onload = checkPassword;
-</script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
