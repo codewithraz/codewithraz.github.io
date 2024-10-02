@@ -1,0 +1,30 @@
+Oct 02 12:04:53 server01 sshd[1321]: Accepted password for user root from 192.168.1.100 port 45876 ssh2
+Oct 02 12:04:53 server01 sshd[1321]: pam_unix(sshd:session): session opened for user root by (uid=0)
+Oct 02 12:05:10 server01 systemd[1]: Started Session 24 of user root.
+Oct 02 12:05:12 server01 kernel: [521317.312345] eth0: link is up
+Oct 02 12:05:12 server01 kernel: [521317.312789] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+Oct 02 12:05:13 server01 systemd[1]: Started Backup Service.
+Oct 02 12:06:27 server01 crond[1380]: (root) CMD (/usr/bin/backup.sh)
+Oct 02 12:06:29 server01 kernel: [521354.315678] EXT4-fs (sda1): resizing filesystem from 524288 to 1048576 blocks
+Oct 02 12:07:01 server01 systemd[1]: Starting Cleanup of Temporary Directories...
+Oct 02 12:07:02 server01 systemd[1]: Started Cleanup of Temporary Directories.
+Oct 02 12:07:58 server01 sshd[1422]: Received disconnect from 192.168.1.100: 11: disconnected by user
+Oct 02 12:07:58 server01 sshd[1422]: pam_unix(sshd:session): session closed for user root
+Oct 02 12:08:20 server01 systemd[1]: Reloading Apache HTTP Server.
+Oct 02 12:08:21 server01 systemd[1]: Reloaded Apache HTTP Server.
+Oct 02 12:09:33 server01 kernel: [521394.789123] usb 2-1: new high-speed USB device number 4 using xhci_hcd
+Oct 02 12:09:34 server01 kernel: [521394.951246] usb-storage 2-1:1.0: USB Mass Storage device detected
+Oct 02 12:09:34 server01 kernel: [521394.951569] scsi host6: usb-storage 2-1:1.0
+Oct 02 12:09:36 server01 kernel: [521396.123456] scsi 6:0:0:0: Direct-Access     SanDisk  Extreme         1.00 PQ: 0 ANSI: 6
+Oct 02 12:10:00 server01 systemd[1]: Stopping Docker Application Container Engine...
+Oct 02 12:10:02 server01 systemd[1]: Stopped Docker Application Container Engine.
+Oct 02 12:10:05 server01 systemd[1]: Started Docker Application Container Engine.
+Oct 02 12:10:12 server01 systemd[1]: Starting Rotate log files...
+Oct 02 12:10:14 server01 systemd[1]: Started Rotate log files.
+Oct 02 12:11:22 server01 kernel: [521432.876543] CPU0: Core temperature above threshold, cpu clock throttled
+Oct 02 12:11:25 server01 kernel: [521433.123456] CPU0: Core temperature/speed normal
+Oct 02 12:11:57 server01 sshd[1490]: Accepted publickey for user backup from 192.168.1.200 port 49322 ssh2
+Oct 02 12:12:01 server01 systemd[1]: Started Session 25 of user backup.
+Oct 02 12:13:45 server01 kernel: [521482.223456] EXT4-fs (sda1): resized filesystem to 1048576
+Oct 02 12:14:05 server01 systemd[1]: Stopping Apache HTTP Server...
+Oct 02 12:14:08 server01 systemd[1]: Stopped Apache HTTP Server.
