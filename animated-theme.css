@@ -1,0 +1,731 @@
+/* Animated Background Theme - Green with Faded Buildings */
+
+/* Animated Building Background */
+.animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    background: linear-gradient(180deg, #f8f9fa 0%, #e8f5e9 50%, #c8e6c9 100%);
+}
+
+/* Moving Clouds */
+.clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.cloud {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    filter: blur(2px);
+}
+
+.cloud::before,
+.cloud::after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+}
+
+.cloud-1 {
+    width: 120px;
+    height: 40px;
+    top: 15%;
+    left: -150px;
+    animation: moveCloud1 45s linear infinite;
+}
+
+.cloud-1::before {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 20px;
+}
+
+.cloud-1::after {
+    width: 60px;
+    height: 60px;
+    top: -35px;
+    left: 50px;
+}
+
+.cloud-2 {
+    width: 100px;
+    height: 35px;
+    top: 25%;
+    left: -120px;
+    animation: moveCloud2 55s linear infinite;
+    animation-delay: 10s;
+}
+
+.cloud-2::before {
+    width: 45px;
+    height: 45px;
+    top: -20px;
+    left: 15px;
+}
+
+.cloud-2::after {
+    width: 55px;
+    height: 55px;
+    top: -30px;
+    left: 40px;
+}
+
+.cloud-3 {
+    width: 150px;
+    height: 50px;
+    top: 10%;
+    left: -180px;
+    animation: moveCloud3 60s linear infinite;
+    animation-delay: 20s;
+}
+
+.cloud-3::before {
+    width: 60px;
+    height: 60px;
+    top: -30px;
+    left: 25px;
+}
+
+.cloud-3::after {
+    width: 70px;
+    height: 70px;
+    top: -40px;
+    left: 60px;
+}
+
+.cloud-4 {
+    width: 80px;
+    height: 30px;
+    top: 35%;
+    left: -100px;
+    animation: moveCloud4 40s linear infinite;
+    animation-delay: 5s;
+}
+
+.cloud-4::before {
+    width: 40px;
+    height: 40px;
+    top: -20px;
+    left: 10px;
+}
+
+.cloud-4::after {
+    width: 45px;
+    height: 45px;
+    top: -25px;
+    left: 30px;
+}
+
+.cloud-5 {
+    width: 130px;
+    height: 45px;
+    top: 20%;
+    left: -160px;
+    animation: moveCloud5 50s linear infinite;
+    animation-delay: 15s;
+}
+
+.cloud-5::before {
+    width: 55px;
+    height: 55px;
+    top: -28px;
+    left: 20px;
+}
+
+.cloud-5::after {
+    width: 65px;
+    height: 65px;
+    top: -38px;
+    left: 55px;
+}
+
+@keyframes moveCloud1 {
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+    5% {
+        opacity: 0.6;
+    }
+    95% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateX(calc(100vw + 300px));
+        opacity: 0;
+    }
+}
+
+@keyframes moveCloud2 {
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+    5% {
+        opacity: 0.5;
+    }
+    95% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateX(calc(100vw + 250px));
+        opacity: 0;
+    }
+}
+
+@keyframes moveCloud3 {
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+    5% {
+        opacity: 0.7;
+    }
+    95% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateX(calc(100vw + 350px));
+        opacity: 0;
+    }
+}
+
+@keyframes moveCloud4 {
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+    5% {
+        opacity: 0.4;
+    }
+    95% {
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateX(calc(100vw + 200px));
+        opacity: 0;
+    }
+}
+
+@keyframes moveCloud5 {
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+    5% {
+        opacity: 0.55;
+    }
+    95% {
+        opacity: 0.55;
+    }
+    100% {
+        transform: translateX(calc(100vw + 300px));
+        opacity: 0;
+    }
+}
+
+.animated-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><defs><pattern id="windows1" patternUnits="userSpaceOnUse" width="8" height="12"><rect x="1" y="1" width="6" height="4" fill="%234CAF50" opacity="0.1"/><rect x="1" y="7" width="6" height="4" fill="%234CAF50" opacity="0.1"/></pattern><pattern id="windows2" patternUnits="userSpaceOnUse" width="10" height="15"><rect x="1" y="1" width="8" height="5" fill="%234CAF50" opacity="0.1"/><rect x="1" y="9" width="8" height="5" fill="%234CAF50" opacity="0.1"/></pattern><pattern id="brick" patternUnits="userSpaceOnUse" width="20" height="10"><rect x="0" y="0" width="10" height="10" fill="%234CAF50" opacity="0.02"/><rect x="10" y="0" width="10" height="10" fill="%234CAF50" opacity="0.03"/></pattern></defs><rect x="0" y="100" width="30" height="100" fill="url(%23brick)" stroke="%234CAF50" stroke-width="1" opacity="0.3"/><rect x="2" y="105" width="26" height="90" fill="url(%23windows1)" opacity="0.5"/><rect x="35" y="60" width="40" height="140" fill="url(%23brick)" stroke="%234CAF50" stroke-width="1" opacity="0.3"/><rect x="37" y="65" width="36" height="130" fill="url(%23windows2)" opacity="0.5"/><rect x="80" y="120" width="25" height="80" fill="url(%23brick)" stroke="%234CAF50" stroke-width="1" opacity="0.3"/><rect x="82" y="125" width="21" height="70" fill="url(%23windows1)" opacity="0.5"/><rect x="110" y="40" width="50" height="160" fill="url(%23brick)" stroke="%234CAF50" stroke-width="1" opacity="0.3"/><rect x="112" y="45" width="46" height="150" fill="url(%23windows2)" opacity="0.5"/><rect x="165" y="80" width="35" height="120" fill="url(%23brick)" stroke="%234CAF50" stroke-width="1" opacity="0.3"/><rect x="167" y="85" width="31" height="110" fill="url(%23windows1)" opacity="0.5"/><rect x="205" y="50" width="45" height="150" fill="url(%23brick)" stroke="%234CAF50" stroke-width="1" opacity="0.3"/><rect x="207" y="55" width="41" height="140" fill="url(%23windows2)" opacity="0.5"/><rect x="255" y="90" width="30" height="110" fill="url(%23brick)" stroke="%234CAF50" stroke-width="1" opacity="0.3"/><rect x="257" y="95" width="26" height="100" fill="url(%23windows1)" opacity="0.5"/><rect x="290" y="30" width="55" height="170" fill="url(%23brick)" stroke="%234CAF50" stroke-width="1" opacity="0.3"/><rect x="292" y="35" width="51" height="160" fill="url(%23windows2)" opacity="0.5"/><rect x="350" y="70" width="40" height="130" fill="url(%23brick)" stroke="%234CAF50" stroke-width="1" opacity="0.3"/><rect x="352" y="75" width="36" height="120" fill="url(%23windows1)" opacity="0.5"/><rect x="20" y="140" width="25" height="60" fill="url(%23brick)" stroke="%234CAF50" stroke-width="1" opacity="0.3"/><rect x="22" y="145" width="21" height="50" fill="url(%23windows1)" opacity="0.5"/><rect x="130" y="150" width="20" height="50" fill="url(%23brick)" stroke="%234CAF50" stroke-width="1" opacity="0.3"/><rect x="132" y="155" width="16" height="40" fill="url(%23windows1)" opacity="0.5"/><rect x="240" y="130" width="30" height="70" fill="url(%23brick)" stroke="%234CAF50" stroke-width="1" opacity="0.3"/><rect x="242" y="135" width="26" height="60" fill="url(%23windows1)" opacity="0.5"/><rect x="320" y="145" width="25" height="55" fill="url(%23brick)" stroke="%234CAF50" stroke-width="1" opacity="0.3"/><rect x="322" y="150" width="21" height="45" fill="url(%23windows1)" opacity="0.5"/></svg>');
+    background-size: 400px 200px;
+    background-repeat: repeat;
+}
+
+.building-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.building {
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(180deg, #a5d6a7 0%, #81c784 100%);
+    border-radius: 4px 4px 0 0;
+    opacity: 0.15;
+    transition: all 0.5s ease;
+}
+
+.building::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 80%;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 8px,
+        rgba(46, 125, 50, 0.1) 8px,
+        rgba(46, 125, 50, 0.1) 10px
+    );
+}
+
+.building::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 15px,
+        rgba(46, 125, 50, 0.05) 15px,
+        rgba(46, 125, 50, 0.05) 17px
+    );
+}
+
+/* Building Variations */
+.building-1 {
+    left: 5%;
+    width: 60px;
+    height: 200px;
+    animation: grow1 8s ease-in-out infinite;
+}
+
+.building-2 {
+    left: 15%;
+    width: 80px;
+    height: 300px;
+    animation: grow2 10s ease-in-out infinite;
+}
+
+.building-3 {
+    left: 25%;
+    width: 50px;
+    height: 150px;
+    animation: grow3 6s ease-in-out infinite;
+}
+
+.building-4 {
+    left: 35%;
+    width: 100px;
+    height: 400px;
+    animation: grow4 12s ease-in-out infinite;
+}
+
+.building-5 {
+    left: 50%;
+    width: 70px;
+    height: 250px;
+    animation: grow5 9s ease-in-out infinite;
+}
+
+.building-6 {
+    left: 60%;
+    width: 90px;
+    height: 350px;
+    animation: grow6 11s ease-in-out infinite;
+}
+
+.building-7 {
+    left: 75%;
+    width: 55px;
+    height: 180px;
+    animation: grow7 7s ease-in-out infinite;
+}
+
+.building-8 {
+    left: 85%;
+    width: 75px;
+    height: 280px;
+    animation: grow8 8s ease-in-out infinite;
+}
+
+/* Building Animations */
+@keyframes grow1 {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(1.1); }
+}
+
+@keyframes grow2 {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(1.15); }
+}
+
+@keyframes grow3 {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(1.08); }
+}
+
+@keyframes grow4 {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(1.2); }
+}
+
+@keyframes grow5 {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(1.12); }
+}
+
+@keyframes grow6 {
+    0%, 100% { transform: scaleY(1); }
+   50% { transform: scaleY(1.18); }
+}
+
+@keyframes grow7 {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(1.1); }
+}
+
+@keyframes grow8 {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(1.14); }
+}
+
+/* Floating Particles */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(76, 175, 80, 0.2);
+    border-radius: 50%;
+    animation: float 15s infinite;
+}
+
+.particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+.particle:nth-child(2) { left: 20%; animation-delay: 2s; }
+.particle:nth-child(3) { left: 30%; animation-delay: 4s; }
+.particle:nth-child(4) { left: 40%; animation-delay: 6s; }
+.particle:nth-child(5) { left: 50%; animation-delay: 8s; }
+.particle:nth-child(6) { left: 60%; animation-delay: 10s; }
+.particle:nth-child(7) { left: 70%; animation-delay: 12s; }
+.particle:nth-child(8) { left: 80%; animation-delay: 14s; }
+.particle:nth-child(9) { left: 90%; animation-delay: 1s; }
+.particle:nth-child(10) { left: 95%; animation-delay: 3s; }
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Scroll Progress Indicator */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #4CAF50, #8BC34A);
+    z-index: 1001;
+    transition: width 0.1s ease;
+}
+
+/* Section Backgrounds */
+.hero {
+    background: linear-gradient(135deg, rgba(46, 125, 50, 0.95) 0%, rgba(27, 94, 32, 0.95) 100%);
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><defs><pattern id="windows1" patternUnits="userSpaceOnUse" width="8" height="12"><rect x="1" y="1" width="6" height="4" fill="%23ffffff" opacity="0.1"/><rect x="1" y="7" width="6" height="4" fill="%23ffffff" opacity="0.1"/></pattern><pattern id="windows2" patternUnits="userSpaceOnUse" width="10" height="15"><rect x="1" y="1" width="8" height="5" fill="%23ffffff" opacity="0.1"/><rect x="1" y="9" width="8" height="5" fill="%23ffffff" opacity="0.1"/></pattern><pattern id="brick" patternUnits="userSpaceOnUse" width="20" height="10"><rect x="0" y="0" width="10" height="10" fill="%23ffffff" opacity="0.02"/><rect x="10" y="0" width="10" height="10" fill="%23ffffff" opacity="0.03"/></pattern></defs><rect x="0" y="100" width="30" height="100" fill="url(%23brick)" stroke="%23ffffff" stroke-width="1" opacity="0.3"/><rect x="2" y="105" width="26" height="90" fill="url(%23windows1)" opacity="0.5"/><rect x="35" y="60" width="40" height="140" fill="url(%23brick)" stroke="%23ffffff" stroke-width="1" opacity="0.3"/><rect x="37" y="65" width="36" height="130" fill="url(%23windows2)" opacity="0.5"/><rect x="80" y="120" width="25" height="80" fill="url(%23brick)" stroke="%23ffffff" stroke-width="1" opacity="0.3"/><rect x="82" y="125" width="21" height="70" fill="url(%23windows1)" opacity="0.5"/><rect x="110" y="40" width="50" height="160" fill="url(%23brick)" stroke="%23ffffff" stroke-width="1" opacity="0.3"/><rect x="112" y="45" width="46" height="150" fill="url(%23windows2)" opacity="0.5"/><rect x="165" y="80" width="35" height="120" fill="url(%23brick)" stroke="%23ffffff" stroke-width="1" opacity="0.3"/><rect x="167" y="85" width="31" height="110" fill="url(%23windows1)" opacity="0.5"/><rect x="205" y="50" width="45" height="150" fill="url(%23brick)" stroke="%23ffffff" stroke-width="1" opacity="0.3"/><rect x="207" y="55" width="41" height="140" fill="url(%23windows2)" opacity="0.5"/><rect x="255" y="90" width="30" height="110" fill="url(%23brick)" stroke="%23ffffff" stroke-width="1" opacity="0.3"/><rect x="257" y="95" width="26" height="100" fill="url(%23windows1)" opacity="0.5"/><rect x="290" y="30" width="55" height="170" fill="url(%23brick)" stroke="%23ffffff" stroke-width="1" opacity="0.3"/><rect x="292" y="35" width="51" height="160" fill="url(%23windows2)" opacity="0.5"/><rect x="350" y="70" width="40" height="130" fill="url(%23brick)" stroke="%23ffffff" stroke-width="1" opacity="0.3"/><rect x="352" y="75" width="36" height="120" fill="url(%23windows1)" opacity="0.5"/></svg>');
+    background-size: 400px 200px;
+}
+
+.features {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 249, 250, 0.9) 100%);
+    backdrop-filter: blur(10px);
+}
+
+.products {
+    background: linear-gradient(180deg, rgba(248, 249, 250, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%);
+    backdrop-filter: blur(10px);
+}
+
+.benefits {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 249, 250, 0.9) 100%);
+    backdrop-filter: blur(10px);
+}
+
+.about {
+    background: linear-gradient(180deg, rgba(248, 249, 250, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%);
+    backdrop-filter: blur(10px);
+}
+
+.testimonials {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 249, 250, 0.9) 100%);
+    backdrop-filter: blur(10px);
+}
+
+.contact {
+    background: linear-gradient(180deg, rgba(248, 249, 250, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%);
+    backdrop-filter: blur(10px);
+}
+
+/* Glassmorphism Cards */
+.feature-card,
+.product-card,
+.testimonial-card,
+.contact-form {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(76, 175, 80, 0.1);
+}
+
+/* Enhanced Shadows */
+.feature-card:hover,
+.product-card:hover,
+.testimonial-card:hover {
+    box-shadow: 0 20px 40px rgba(46, 125, 50, 0.15);
+}
+
+/* Scroll-triggered Building Growth */
+.scroll-building {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 0;
+    background: linear-gradient(180deg, #4CAF50 0%, #2E7D32 100%);
+    border-radius: 8px 8px 0 0;
+    z-index: -1;
+    transition: height 0.3s ease;
+    opacity: 0.3;
+}
+
+.scroll-building::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 70%;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 10px,
+        rgba(255, 255, 255, 0.2) 10px,
+        rgba(255, 255, 255, 0.2) 12px
+    );
+}
+
+/* Section Reveal Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(135deg, #4CAF50 0%, #8BC34A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Enhanced Button Styles */
+.btn-primary {
+    background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #66BB6A 0%, #43A047 100%);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+    transform: translateY(-3px);
+}
+
+/* Special View Products Button Enhancement */
+.hero-buttons .btn-primary {
+    animation: pulse 2s infinite;
+    color: #fff;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 25px rgba(76, 175, 80, 0.5);
+    }
+}
+
+.hero-buttons .btn-primary:hover {
+    animation: none;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    color: var(--text-white);
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-secondary:hover::before {
+    left: 100%;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--text-white);
+    transform: translateY(-3px);
+}
+
+/* Navbar Enhancement */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(76, 175, 80, 0.1);
+}
+
+/* Footer Enhancement */
+.footer {
+    background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><defs><pattern id="windows1" patternUnits="userSpaceOnUse" width="8" height="12"><rect x="1" y="1" width="6" height="4" fill="%23ffffff" opacity="0.1"/><rect x="1" y="7" width="6" height="4" fill="%23ffffff" opacity="0.1"/></pattern><pattern id="windows2" patternUnits="userSpaceOnUse" width="10" height="15"><rect x="1" y="1" width="8" height="5" fill="%23ffffff" opacity="0.1"/><rect x="1" y="9" width="8" height="5" fill="%23ffffff" opacity="0.1"/></pattern><pattern id="brick" patternUnits="userSpaceOnUse" width="20" height="10"><rect x="0" y="0" width="10" height="10" fill="%23ffffff" opacity="0.02"/><rect x="10" y="0" width="10" height="10" fill="%23ffffff" opacity="0.03"/></pattern></defs><rect x="0" y="100" width="30" height="100" fill="url(%23brick)" stroke="%23ffffff" stroke-width="1" opacity="0.3"/><rect x="2" y="105" width="26" height="90" fill="url(%23windows1)" opacity="0.5"/><rect x="35" y="60" width="40" height="140" fill="url(%23brick)" stroke="%23ffffff" stroke-width="1" opacity="0.3"/><rect x="37" y="65" width="36" height="130" fill="url(%23windows2)" opacity="0.5"/><rect x="80" y="120" width="25" height="80" fill="url(%23brick)" stroke="%23ffffff" stroke-width="1" opacity="0.3"/><rect x="82" y="125" width="21" height="70" fill="url(%23windows1)" opacity="0.5"/><rect x="110" y="40" width="50" height="160" fill="url(%23brick)" stroke="%23ffffff" stroke-width="1" opacity="0.3"/><rect x="112" y="45" width="46" height="150" fill="url(%23windows2)" opacity="0.5"/><rect x="165" y="80" width="35" height="120" fill="url(%23brick)" stroke="%23ffffff" stroke-width="1" opacity="0.3"/><rect x="167" y="85" width="31" height="110" fill="url(%23windows1)" opacity="0.5"/><rect x="205" y="50" width="45" height="150" fill="url(%23brick)" stroke="%23ffffff" stroke-width="1" opacity="0.3"/><rect x="207" y="55" width="41" height="140" fill="url(%23windows2)" opacity="0.5"/><rect x="255" y="90" width="30" height="110" fill="url(%23brick)" stroke="%23ffffff" stroke-width="1" opacity="0.3"/><rect x="257" y="95" width="26" height="100" fill="url(%23windows1)" opacity="0.5"/><rect x="290" y="30" width="55" height="170" fill="url(%23brick)" stroke="%23ffffff" stroke-width="1" opacity="0.3"/><rect x="292" y="35" width="51" height="160" fill="url(%23windows2)" opacity="0.5"/><rect x="350" y="70" width="40" height="130" fill="url(%23brick)" stroke="%23ffffff" stroke-width="1" opacity="0.3"/><rect x="352" y="75" width="36" height="120" fill="url(%23windows1)" opacity="0.5"/></svg>');
+    background-size: 400px 200px;
+}
+
+/* Products Page Hero */
+.products-hero {
+    background: linear-gradient(135deg, rgba(46, 125, 50, 0.95) 0%, rgba(27, 94, 32, 0.95) 100%);
+}
+
+/* Why Choose Section */
+.why-choose {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 249, 250, 0.9) 100%);
+    backdrop-filter: blur(10px);
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+}
+
+/* Products Filter */
+.products-filter {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(76, 175, 80, 0.1);
+}
+
+/* Map Section */
+.map-section {
+    padding: 0;
+    background: var(--bg-light);
+}
+
+.map-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.map-container iframe {
+    display: block;
+    width: 100%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .building {
+        opacity: 0.1;
+    }
+
+    .scroll-building {
+        width: 150px;
+    }
+}

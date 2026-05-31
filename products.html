@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - GreenFort Materials</title>
+    <script>
+        // Set scroll restoration to manual immediately
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        // Scroll to top immediately
+        window.scrollTo(0, 0);
+    </script>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="products.css">
+    <link rel="stylesheet" href="icons.css">
+    <link rel="stylesheet" href="animated-theme.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-background">
+        <div class="clouds">
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+            <div class="cloud cloud-4"></div>
+            <div class="cloud cloud-5"></div>
+        </div>
+        <div class="building-container">
+            <div class="building building-1"></div>
+            <div class="building building-2"></div>
+            <div class="building building-3"></div>
+            <div class="building building-4"></div>
+            <div class="building building-5"></div>
+            <div class="building building-6"></div>
+            <div class="building building-7"></div>
+            <div class="building building-8"></div>
+        </div>
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Scroll Building -->
+    <div class="scroll-building" id="scrollBuilding"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="GreenFort Logo" class="logo-img">
+                </a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="index.html#contact" class="btn-contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Products Hero -->
+    <section class="products-hero reveal">
+        <div class="container">
+            <div class="products-hero-content">
+                <h1>Our Products</h1>
+                <p>Premium quality building materials for all your construction needs</p>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <span>Products</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Filter -->
+    <section class="products-filter">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Products</button>
+                <button class="filter-btn" data-filter="aac">AAC Blocks & Walls</button>
+                <button class="filter-btn" data-filter="adhesives">Adhesives & Plasters</button>
+                <button class="filter-btn" data-filter="decorative">Decorative</button>
+                <button class="filter-btn" data-filter="windows">Steel Windows</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-grid">
+                <!-- AAC -->
+                <div class="product-item" data-category="aac">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/aac-4inch.png" alt="Renacon 4 Inch AAC Block">
+                            <span class="product-badge">Best Seller</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Renacon 4 Inch AAC Block</h3>
+                            <span class="product-category">AAC Blocks</span>
+                            <p>Lightweight and durable blocks perfect for interior walls and partitions.</p>
+                            <ul class="product-features"><li>✓ Lightweight</li><li>✓ Eco-friendly</li><li>✓ Fire resistant</li><li>✓ Sound insulation</li></ul>
+                            <div class="product-specs"><div class="spec-item"><span class="spec-label">Size</span><span class="spec-value">4 Inch</span></div><div class="spec-item"><span class="spec-label">Density</span><span class="spec-value">550-650 kg/m³</span></div><div class="spec-item"><span class="spec-label">Strength</span><span class="spec-value">3-4.5 N/mm²</span></div></div>
+                            <a href="index.html#contact" class="btn btn-primary">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item" data-category="aac">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/aac-6inch.jpg" alt="Renacon 5 Inch AAC Block">
+                            <span class="product-badge">Versatile</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Renacon 5 Inch AAC Block</h3><span class="product-category">AAC Blocks</span>
+                            <p>Versatile blocks suitable for both interior and exterior wall applications.</p>
+                            <ul class="product-features"><li>✓ Versatile application</li><li>✓ Good insulation</li><li>✓ Cost-effective</li><li>✓ Easy to handle</li></ul>
+                            <div class="product-specs"><div class="spec-item"><span class="spec-label">Size</span><span class="spec-value">5 Inch</span></div><div class="spec-item"><span class="spec-label">Density</span><span class="spec-value">550-650 kg/m³</span></div><div class="spec-item"><span class="spec-label">Strength</span><span class="spec-value">3-4.5 N/mm²</span></div></div>
+                            <a href="index.html#contact" class="btn btn-primary">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item" data-category="aac">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/aac-6inch.jpg" alt="Renacon 6 Inch AAC Block">
+                            <span class="product-badge popular">Popular</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Renacon 6 Inch AAC Block</h3><span class="product-category">AAC Blocks</span>
+                            <p>Ideal for exterior walls with excellent thermal insulation properties.</p>
+                            <ul class="product-features"><li>✓ Superior thermal insulation</li><li>✓ Reduces AC costs</li><li>✓ High dimensional accuracy</li><li>✓ Pest resistant</li></ul>
+                            <div class="product-specs"><div class="spec-item"><span class="spec-label">Size</span><span class="spec-value">6 Inch</span></div><div class="spec-item"><span class="spec-label">Density</span><span class="spec-value">550-650 kg/m³</span></div><div class="spec-item"><span class="spec-label">Strength</span><span class="spec-value">3-4.5 N/mm²</span></div></div>
+                            <a href="index.html#contact" class="btn btn-primary">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item" data-category="aac">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/aac-8inch.jpg" alt="Renacon 8 Inch AAC Block">
+                            <span class="product-badge premium">Premium</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Renacon 8 Inch AAC Block</h3><span class="product-category">AAC Blocks</span>
+                            <p>Heavy-duty blocks designed for load-bearing structures and multi-story buildings.</p>
+                            <ul class="product-features"><li>✓ Load-bearing capacity</li><li>✓ Earthquake resistant</li><li>✓ Faster construction</li><li>✓ High strength</li></ul>
+                            <div class="product-specs"><div class="spec-item"><span class="spec-label">Size</span><span class="spec-value">8 Inch</span></div><div class="spec-item"><span class="spec-label">Density</span><span class="spec-value">600-700 kg/m³</span></div><div class="spec-item"><span class="spec-label">Strength</span><span class="spec-value">4-5 N/mm²</span></div></div>
+                            <a href="index.html#contact" class="btn btn-primary">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item" data-category="aac">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/rapid-walls.jpg" alt="Renacon Rapid Walls">
+                            <span class="product-badge premium">Premium</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Renacon Rapid Walls</h3><span class="product-category">Wall Panels</span>
+                            <p>Pre-fabricated wall panels for rapid construction and partition walls.</p>
+                            <ul class="product-features"><li>✓ Pre-fabricated</li><li>✓ Faster installation</li><li>✓ High strength</li><li>✓ Cost-effective</li></ul>
+                            <div class="product-specs"><div class="spec-item"><span class="spec-label">Type</span><span class="spec-value">Wall Panels</span></div><div class="spec-item"><span class="spec-label">Application</span><span class="spec-value">Partitions</span></div><div class="spec-item"><span class="spec-label">Installation</span><span class="spec-value">Quick</span></div></div>
+                            <a href="index.html#contact" class="btn btn-primary">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item" data-category="aac">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/g-vector-aac.jpg" alt="G Vector AAC Blocks">
+                            <span class="product-badge">Quality</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>G Vector AAC Blocks</h3><span class="product-category">AAC Blocks</span>
+                            <p>High-quality AAC blocks known for superior strength and thermal properties.</p>
+                            <ul class="product-features"><li>✓ Premium quality</li><li>✓ Excellent insulation</li><li>✓ Lightweight & durable</li><li>✓ Eco-friendly</li></ul>
+                            <div class="product-specs"><div class="spec-item"><span class="spec-label">Sizes</span><span class="spec-value">4", 6", 8"</span></div><div class="spec-item"><span class="spec-label">Density</span><span class="spec-value">550-650 kg/m³</span></div><div class="spec-item"><span class="spec-label">Strength</span><span class="spec-value">3-5 N/mm²</span></div></div>
+                            <a href="index.html#contact" class="btn btn-primary">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item" data-category="aac">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/birla-aerocon-panels.jpg" alt="Birla Aerocon AAC Panels">
+                            <span class="product-badge premium">Premium</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Birla Aerocon AAC Panels</h3><span class="product-category">Wall Panels</span>
+                            <p>Premium AAC panels for rapid wall construction in high-rise buildings.</p>
+                            <ul class="product-features"><li>✓ Premium quality</li><li>✓ Fire resistant</li><li>✓ Sound insulation</li><li>✓ Earthquake resistant</li></ul>
+                            <div class="product-specs"><div class="spec-item"><span class="spec-label">Type</span><span class="spec-value">AAC Panels</span></div><div class="spec-item"><span class="spec-label">Thickness</span><span class="spec-value">75-200mm</span></div><div class="spec-item"><span class="spec-label">Application</span><span class="spec-value">High-rise</span></div></div>
+                            <a href="index.html#contact" class="btn btn-primary">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item" data-category="aac">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/birla-aerocon-blocks.jpg" alt="Birla Aerocon Blocks">
+                            <span class="product-badge popular">Popular</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Birla Aerocon Blocks</h3><span class="product-category">AAC Blocks</span>
+                            <p>High-quality AAC blocks with excellent thermal and sound insulation.</p>
+                            <ul class="product-features"><li>✓ Superior insulation</li><li>✓ Sound proofing</li><li>✓ Lightweight & strong</li><li>✓ Eco-friendly</li></ul>
+                            <div class="product-specs"><div class="spec-item"><span class="spec-label">Sizes</span><span class="spec-value">4", 6", 8"</span></div><div class="spec-item"><span class="spec-label">Density</span><span class="spec-value">550-650 kg/m³</span></div><div class="spec-item"><span class="spec-label">Strength</span><span class="spec-value">3-5 N/mm²</span></div></div>
+                            <a href="index.html#contact" class="btn btn-primary">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Adhesives -->
+                <div class="product-item" data-category="adhesives">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/renabond.png" alt="Renabond">
+                            <span class="product-badge">Essential</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Renabond</h3><span class="product-category">Adhesives</span>
+                            <p>Premium factory-made AAC joint adhesive for thin joints.</p>
+                            <ul class="product-features"><li>✓ Thin joint (2-3mm)</li><li>✓ Strong bonding</li><li>✓ Ready to use</li><li>✓ No curing</li></ul>
+                            <div class="product-specs"><div class="spec-item"><span class="spec-label">Type</span><span class="spec-value">Joint Adhesive</span></div><div class="spec-item"><span class="spec-label">Thickness</span><span class="spec-value">2-3mm</span></div><div class="spec-item"><span class="spec-label">Coverage</span><span class="spec-value">25-30 kg/m²</span></div></div>
+                            <a href="index.html#contact" class="btn btn-primary">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item" data-category="adhesives">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/renafix.png" alt="RenaFix">
+                            <span class="product-badge">Quality</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>RenaFix</h3><span class="product-category">Plasters</span>
+                            <p>Ready mix cement plaster with polymer additives for smooth finishes.</p>
+                            <ul class="product-features"><li>✓ Ready to use</li><li>✓ Polymer enhanced</li><li>✓ Smooth finish</li><li>✓ Crack resistant</li></ul>
+                            <div class="product-specs"><div class="spec-item"><span class="spec-label">Type</span><span class="spec-value">Cement Plaster</span></div><div class="spec-item"><span class="spec-label">Thickness</span><span class="spec-value">10-15mm</span></div><div class="spec-item"><span class="spec-label">Coverage</span><span class="spec-value">15-20 kg/m²</span></div></div>
+                            <a href="index.html#contact" class="btn btn-primary">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item" data-category="adhesives">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/renaplast.png" alt="Renaplast">
+                            <span class="product-badge">Durable</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Renaplast</h3><span class="product-category">Plasters</span>
+                            <p>Exterior cement plaster for walls, concrete, and AAC blocks.</p>
+                            <ul class="product-features"><li>✓ Weather resistant</li><li>✓ Multi-surface</li><li>✓ Long-lasting</li><li>✓ Water resistant</li></ul>
+                            <div class="product-specs"><div class="spec-item"><span class="spec-label">Type</span><span class="spec-value">Exterior Plaster</span></div><div class="spec-item"><span class="spec-label">Application</span><span class="spec-value">Multi-surface</span></div><div class="spec-item"><span class="spec-label">Coverage</span><span class="spec-value">12-18 kg/m²</span></div></div>
+                            <a href="index.html#contact" class="btn btn-primary">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item" data-category="adhesives">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="ramcota-slideshow">
+                                <img src="images/Ramcota-1.jpg" alt="Ramco Tile Adhesives 1">
+                                <img src="images/Ramcota-2.jpg" alt="Ramco Tile Adhesives 2">
+                                <img src="images/Ramcota-3.jpg" alt="Ramco Tile Adhesives 3">
+                                <img src="images/Ramcota-4.jpg" alt="Ramco Tile Adhesives 4">
+                                <img src="images/Ramcota-5.jpg" alt="Ramco Tile Adhesives 5">
+                            </div>
+                            <span class="product-badge">Quality</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Ramco Tile Adhesives</h3><span class="product-category">Adhesives</span>
+                            <p>High-quality tile adhesive for ceramic, vitrified, and porcelain tiles.</p>
+                            <ul class="product-features"><li>✓ Strong bonding</li><li>✓ Water resistant</li><li>✓ Easy to apply</li><li>✓ Long-lasting</li></ul>
+                            <div class="product-specs"><div class="spec-item"><span class="spec-label">Type</span><span class="spec-value">Tile Adhesive</span></div><div class="spec-item"><span class="spec-label">Suitable For</span><span class="spec-value">All Tiles</span></div><div class="spec-item"><span class="spec-label">Coverage</span><span class="spec-value">3-5 kg/m²</span></div></div>
+                            <a href="index.html#contact" class="btn btn-primary">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item" data-category="adhesives">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/ramco-joint-mortar.jpg" alt="Ramco AAC Block Joint Mortar">
+                            <span class="product-badge">Eco-Friendly</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Ramco AAC Block Joint Mortar</h3><span class="product-category">Mortar</span>
+                            <p>Eco-friendly joint mortar for excellent bonding and thin joints.</p>
+                            <ul class="product-features"><li>✓ Eco-friendly</li><li>✓ Thin joint</li><li>✓ Strong bonding</li><li>✓ Crack resistant</li></ul>
+                            <div class="product-specs"><div class="spec-item"><span class="spec-label">Type</span><span class="spec-value">Joint Mortar</span></div><div class="spec-item"><span class="spec-label">Thickness</span><span class="spec-value">2-3mm</span></div><div class="spec-item"><span class="spec-label">Coverage</span><span class="spec-value">20-25 kg/m²</span></div></div>
+                            <a href="index.html#contact" class="btn btn-primary">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item" data-category="adhesives">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/ramco-eco-plaster.jpg" alt="Ramco Eco Plaster">
+                            <span class="product-badge">Eco-Friendly</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Ramco Eco Plaster</h3><span class="product-category">Plasters</span>
+                            <p>Environmentally friendly plaster for smooth wall finishes.</p>
+                            <ul class="product-features"><li>✓ Eco-friendly</li><li>✓ Smooth finish</li><li>✓ Weather resistant</li><li>✓ Long-lasting</li></ul>
+                            <div class="product-specs"><div class="spec-item"><span class="spec-label">Type</span><span class="spec-value">Eco Plaster</span></div><div class="spec-item"><span class="spec-label">Thickness</span><span class="spec-value">10-15mm</span></div><div class="spec-item"><span class="spec-label">Coverage</span><span class="spec-value">15-20 kg/m²</span></div></div>
+                            <a href="index.html#contact" class="btn btn-primary">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decorative -->
+                <div class="product-item" data-category="decorative">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/terracotta-jalis.jpg" alt="Terracotta Jalis">
+                            <span class="product-badge">Decorative</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Terracotta Jalis</h3><span class="product-category">Decorative Elements</span>
+                            <p>Beautiful terracotta jalis for architectural decoration and ventilation.</p>
+                            <ul class="product-features"><li>✓ Natural terracotta</li><li>✓ Decorative patterns</li><li>✓ Weather resistant</li><li>✓ Low maintenance</li></ul>
+                            <div class="product-specs"><div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Terracotta</span></div><div class="spec-item"><span class="spec-label">Use</span><span class="spec-value">Decorative</span></div><div class="spec-item"><span class="spec-label">Durability</span><span class="spec-value">Long-lasting</span></div></div>
+                            <a href="index.html#contact" class="btn btn-primary">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item" data-category="decorative">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/designer-jalis.jpg" alt="Designer Jalis">
+                            <span class="product-badge premium">Premium</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Designer Jalis</h3><span class="product-category">Decorative Elements</span>
+                            <p>Custom designer jalis with intricate patterns for unique aesthetics.</p>
+                            <ul class="product-features"><li>✓ Custom designs</li><li>✓ Intricate patterns</li><li>✓ Premium quality</li><li>✓ Unique aesthetics</li></ul>
+                            <div class="product-specs"><div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Terracotta/Stone</span></div><div class="spec-item"><span class="spec-label">Use</span><span class="spec-value">Decorative</span></div><div class="spec-item"><span class="spec-label">Customization</span><span class="spec-value">Available</span></div></div>
+                            <a href="index.html#contact" class="btn btn-primary">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Windows -->
+                <div class="product-item" data-category="windows">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/steelwindow1pane.jpg" alt="Steel Window - 1 Pane">
+                            <span class="product-badge">Durable</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Steel Window - 1 Pane</h3><span class="product-category">Windows</span>
+                            <p>High-quality steel windows for residential and commercial buildings.</p>
+                            <ul class="product-features"><li>✓ High strength</li><li>✓ Weather resistant</li><li>✓ Secure & robust</li><li>✓ Low maintenance</li></ul>
+                            <div class="product-specs"><div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Steel</span></div><div class="spec-item"><span class="spec-label">Application</span><span class="spec-value">Res/Com</span></div><div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Powder Coated</span></div></div>
+                            <a href="index.html#contact" class="btn btn-primary">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item" data-category="windows">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/steelwindow2pane.png" alt="Steel Window - 2 Pane">
+                            <span class="product-badge popular">Popular</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Steel Window - 2 Pane</h3><span class="product-category">Windows</span>
+                            <p>Space-saving sliding windows with smooth operation.</p>
+                            <ul class="product-features"><li>✓ Space-saving</li><li>✓ Smooth sliding</li><li>✓ Weather sealed</li><li>✓ Modern design</li></ul>
+                            <div class="product-specs"><div class="spec-item"><span class="spec-label">Type</span><span class="spec-value">Sliding</span></div><div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Steel</span></div><div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Powder Coated</span></div></div>
+                            <a href="index.html#contact" class="btn btn-primary">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item" data-category="windows">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/steelwindows3pane.png" alt="Steel Window - 3 Pane">
+                            <span class="product-badge premium">Premium</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Steel Window - 3 Pane</h3><span class="product-category">Windows</span>
+                            <p>Classic casement windows with excellent ventilation.</p>
+                            <ul class="product-features"><li>✓ Excellent ventilation</li><li>✓ Classic design</li><li>✓ Secure locking</li><li>✓ Weather resistant</li></ul>
+                            <div class="product-specs"><div class="spec-item"><span class="spec-label">Type</span><span class="spec-value">Casement</span></div><div class="spec-item"><span class="spec-label">Material</span><span class="spec-value">Steel</span></div><div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Powder Coated</span></div></div>
+                            <a href="index.html#contact" class="btn btn-primary">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section reveal">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Project?</h2>
+                <p>Contact us today for a free quote and expert advice on the right materials for your construction needs.</p>
+                <div class="cta-buttons">
+                    <a href="index.html#contact" class="btn btn-primary">Get Free Quote</a>
+                    <a href="https://wa.me/919809289089" target="_blank" class="btn btn-whatsapp">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px;vertical-align:middle"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                        WhatsApp Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="images/logo.png" alt="GreenFort Logo" class="logo-img">
+                    </a>
+                    <p>Building materials supplier committed to quality and sustainability.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="products.html">AAC Blocks</a></li>
+                        <li><a href="products.html">Wall Panels</a></li>
+                        <li><a href="products.html">Adhesives & Plasters</a></li>
+                        <li><a href="products.html">Jalis</a></li>
+                        <li><a href="products.html">Steel Windows</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:5px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        Trivandrum, Kerala
+                    </p>
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:5px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        +91 98092 89089
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GreenFort Materials. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+    <script src="products.js" defer></script>
+</body>
+</html>

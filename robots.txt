@@ -1,0 +1,12 @@
+# robots.txt for GreenFort Materials
+# https://thegreenfort.com/
+
+User-agent: *
+Allow: /
+
+# Keep backup/source artifacts out of search indexes
+Disallow: /*.bak$
+
+# AI / LLM overview file: /llms.txt
+
+Sitemap: https://thegreenfort.com/sitemap.xml

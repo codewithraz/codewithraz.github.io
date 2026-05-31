@@ -1,0 +1,127 @@
+// Set scroll restoration to manual immediately
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+// Scroll to top on page load
+window.addEventListener('beforeunload', () => {
+    window.scrollTo(0, 0);
+});
+
+window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    // Force scroll after a short delay
+    setTimeout(() => {
+        window.scrollTo(0, 0);
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }, 100);
+});
+
+// Also scroll to top on DOM content loaded
+document.addEventListener('DOMContentLoaded', () => {
+    window.scrollTo(0, 0);
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+});
+
+// Handle hash changes - scroll to top if no hash or invalid hash
+window.addEventListener('hashchange', () => {
+    if (!window.location.hash) {
+        window.scrollTo(0, 0);
+    }
+});
+
+// Check for hash on initial load
+if (!window.location.hash) {
+    window.scrollTo(0, 0);
+}
+
+// Scroll Progress Indicator
+const scrollProgress = document.getElementById('scrollProgress');
+const scrollBuilding = document.getElementById('scrollBuilding');
+
+if (scrollProgress && scrollBuilding) {
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+
+        // Update scroll progress bar
+        scrollProgress.style.width = scrollPercent + '%';
+
+        // Update scroll building height
+        const buildingHeight = Math.min(scrollPercent * 3, 300); // Max 300px
+        scrollBuilding.style.height = buildingHeight + 'px';
+    });
+}
+
+// Reveal sections on scroll (renamed to avoid conflict with script.js)
+const productsRevealElements = document.querySelectorAll('.reveal');
+
+const productsRevealOnScroll = () => {
+    const windowHeight = window.innerHeight;
+
+    productsRevealElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const revealPoint = 150;
+
+        if (elementTop < windowHeight - revealPoint) {
+            element.classList.add('active');
+        }
+    });
+};
+
+window.addEventListener('scroll', productsRevealOnScroll);
+productsRevealOnScroll(); // Initial check
+
+// Products Filter Functionality
+(function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const productItems = document.querySelectorAll('.product-item');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+
+            // Add active class to clicked button
+            button.classList.add('active');
+
+            // Get filter value
+            const filterValue = button.getAttribute('data-filter');
+
+            // Filter products
+            productItems.forEach(item => {
+                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                    item.classList.remove('hidden');
+                    item.style.display = 'block';
+                    // Add animation
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 50);
+                } else {
+                    item.classList.add('hidden');
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // Animate products on page load
+    productItems.forEach((item, index) => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(30px)';
+        item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+
+        setTimeout(() => {
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+        }, index * 100);
+    });
+})();

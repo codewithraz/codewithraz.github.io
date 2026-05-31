@@ -1,0 +1,88 @@
+/* Icons Styling */
+
+/* Feature Icons */
+.feature-icon svg {
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.feature-card:hover .feature-icon svg {
+    color: var(--primary-dark);
+    transform: scale(1.1);
+}
+
+/* Benefit Icons */
+.benefit-icon svg {
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+/* About Icon */
+.about-icon svg {
+    color: var(--primary-color);
+}
+
+/* Contact Icons */
+.contact-icon svg {
+    color: var(--primary-color);
+}
+
+/* WhatsApp Button Icon */
+.btn-whatsapp svg {
+    color: var(--text-white);
+}
+
+/* Footer Icons */
+.footer-contact svg {
+    color: var(--text-white);
+    opacity: 0.8;
+}
+
+/* Products Page Feature Icons */
+.feature-item .feature-icon svg {
+    color: var(--primary-color);
+}
+
+.feature-item:hover .feature-icon svg {
+    color: var(--primary-dark);
+    transform: scale(1.1);
+}
+
+/* SVG Icon Animations */
+@keyframes iconPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.feature-icon svg,
+.benefit-icon svg,
+.contact-icon svg {
+    animation: iconPulse 3s ease-in-out infinite;
+}
+
+/* Responsive Icon Sizes */
+@media (max-width: 768px) {
+    .feature-icon svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .benefit-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .contact-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .about-icon svg {
+        width: 60px;
+        height: 60px;
+    }
+}
